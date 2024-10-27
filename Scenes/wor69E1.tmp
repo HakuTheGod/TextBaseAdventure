@@ -1,0 +1,19 @@
+[gd_scene load_steps=2 format=3 uid="uid://ttjcwkxvwv3r"]
+
+[ext_resource type="Script" path="res://Scripts/label.gd" id="1_pyqsf"]
+
+[node name="World" type="Node"]
+
+[node name="Label" type="Label" parent="."]
+offset_left = 149.0
+offset_top = 153.0
+offset_right = 1004.0
+offset_bottom = 390.0
+theme_override_font_sizes/font_size = 32
+text = "HELLO, this is a placeholder 
+text to test the effetcs of text displaying.
+There are many types of text siplaying,
+some of them used for different situations than regular
+displaying. We will explore those effects right now.
+"
+script = ExtResource("1_pyqsf")

@@ -1,0 +1,62 @@
+{
+	"000_prologue": {
+		"title": "Prologue",
+		"picture": "res://Assets/43c7d33c8456c17aa920543468cf967b.jpg",
+		"narr-text": "res://Story/Chapters/prologue.txt",
+		"choices": {
+			"1": {
+				"text": "Continue",
+				"output": "001_intro"
+			},
+			"2": {
+				"text": "Quit",
+				"output": "00F_outro_quit"
+			}
+		}
+	},
+	"001_intro": {
+		"title": "Chapter 1: A new journey!",
+		"narr-text": "Long ago, there was test text who wanted to rule the kingdom of text test...",
+		"choices": {
+			"1": {
+				"text": "Continue",
+				"output": "002_outro"
+			},
+			"2": {
+				"text": "This story is BS!",
+				"output": "002_outro"
+			},
+			"3": {
+				"text": "Go back.",
+				"output": "001_intro"
+			}
+		},
+		"items_obtained": {
+			"1": {
+				"text": "Castle Key"
+			},
+			"2": {
+				"text": "BS Sword"
+			}
+		}
+	},
+	"002_outro": {
+		"title": "Chapter 2: The end.",
+		"narr-text": "After Test Text beat the fearsome Lorem Ipsum, he aquired the throne and lived happily ever after. The End.",
+		"choices": {
+			"1": {
+				"text": "Quit",
+				"output": "00F_outro_quit"
+			},
+		},
+		"items_used": {
+			"1": {
+				"text": "Castle Key"
+			}
+		}
+	},
+	"00F_outro_quit": {
+		"title": "Quitting Game...",
+		"narr-text": "Quitting Game...",
+	},
+}
