@@ -1,0 +1,85 @@
+{
+	"000_prologue": {
+		"title": "Prologue",
+		"narr-text": "pipi",
+		"choices": {
+			"1": {
+				"text": "Continue",
+				"output": "001_intro"
+			},
+			"2": {
+				"text": "Quit",
+				"output": "00F_outro_quit"
+			},
+			"3": {
+				"text": "Quit",
+				"output": "00F_outro_quit"
+			},
+			"4": {
+				"text": "Quit",
+				"output": "00F_outro_quit"
+			},
+			"5": {
+				"text": "Quit",
+				"output": "00F_outro_quit"
+			},
+			"6": {
+				"text": "Quit",
+				"output": "00F_outro_quit"
+			},
+			"7": {
+				"text": "Quit",
+				"output": "00F_outro_quit"
+			},
+			"8": {
+				"text": "Quit",
+				"output": "00F_outro_quit"
+			}
+		}
+	},
+	"001_intro": {
+		"title": "Chapter 1: A new journey!",
+		"narr-text": "pipi1",
+		"choices": {
+			"1": {
+				"text": "Continue",
+				"output": "002_outro"
+			},
+			"2": {
+				"text": "This story is BS!",
+				"output": "002_outro"
+			},
+			"3": {
+				"text": "Go back.",
+				"output": "001_intro"
+			}
+		},
+		"items_obtained": {
+			"1": {
+				"text": "Castle Key"
+			},
+			"2": {
+				"text": "BS Sword"
+			}
+		}
+	},
+	"002_outro": {
+		"title": "Chapter 2: The end.",
+		"narr-text": "pipi2",
+		"choices": {
+			"1": {
+				"text": "Quit",
+				"output": "00F_outro_quit"
+			},
+		},
+		"items_used": {
+			"1": {
+				"text": "Castle Key"
+			}
+		}
+	},
+	"00F_outro_quit": {
+		"title": "Quitting Game...",
+		"narr-text": "pipi",
+	},
+}

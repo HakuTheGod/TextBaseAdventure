@@ -1,0 +1,31 @@
+[gd_scene load_steps=3 format=3 uid="uid://cargcnroie6eu"]
+
+[ext_resource type="Script" path="res://Scripts/choiceButtons.gd" id="1_64em6"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_nfkgy"]
+
+[node name="ChoiceButton" type="PanelContainer"]
+custom_minimum_size = Vector2(0, 45)
+offset_right = 480.0
+offset_bottom = 77.0
+theme_override_styles/panel = SubResource("StyleBoxEmpty_nfkgy")
+script = ExtResource("1_64em6")
+
+[node name="Button2" type="Button" parent="."]
+layout_mode = 2
+focus_mode = 0
+
+[node name="TextContainer" type="MarginContainer" parent="."]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 9
+theme_override_constants/margin_right = 15
+theme_override_constants/margin_bottom = 9
+
+[node name="Label" type="Label" parent="TextContainer"]
+custom_minimum_size = Vector2(450, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "Chce Text Text Text Text Text Choice Text Text Text Text Text "
+autowrap_mode = 3

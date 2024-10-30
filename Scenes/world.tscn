@@ -1,6 +1,5 @@
-[gd_scene load_steps=9 format=3 uid="uid://ttjcwkxvwv3r"]
+[gd_scene load_steps=8 format=3 uid="uid://ttjcwkxvwv3r"]
 
-[ext_resource type="Texture2D" uid="uid://dj1i60euq14bl" path="res://Assets/43c7d33c8456c17aa920543468cf967b.jpg" id="1_1f2cj"]
 [ext_resource type="Script" path="res://Scripts/content_data.gd" id="1_bf0rh"]
 [ext_resource type="Script" path="res://Scripts/content_container.gd" id="2_e0m0s"]
 [ext_resource type="Script" path="res://Scripts/choiceButtons.gd" id="4_pefuy"]
@@ -59,19 +58,16 @@ script = ExtResource("2_e0m0s")
 
 [node name="Label" type="Label" parent="MarginContainer/VBoxContainer/ScrollContainer/ContentContainer"]
 unique_name_in_owner = true
+custom_minimum_size = Vector2(500, 0)
 layout_mode = 2
 theme_override_font_sizes/font_size = 22
 text = "TITLE"
 autowrap_mode = 3
 
-[node name="TextureRect" type="TextureRect" parent="MarginContainer/VBoxContainer/ScrollContainer/ContentContainer"]
-unique_name_in_owner = true
-custom_minimum_size = Vector2(460, 0)
+[node name="Chapter" type="VBoxContainer" parent="MarginContainer/VBoxContainer/ScrollContainer/ContentContainer"]
 layout_mode = 2
-texture = ExtResource("1_1f2cj")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="MarginContainer/VBoxContainer/ScrollContainer/ContentContainer"]
-unique_name_in_owner = true
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_font_sizes/bold_italics_font_size = 20

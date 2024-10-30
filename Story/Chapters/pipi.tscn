@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://b8vf2cog5ah8m"]
+
+[node name="Pipi" type="RichTextLabel"]
+process_mode = 3
+offset_right = 288.0
+offset_bottom = 340.0
+bbcode_enabled = true
+text = "You know, I used to think he and I were the same. Seeing as how he was so small and slender,
+
+[color=red]just like a girl.[/color]
+
+In a [b]men’s[/b] society where physical health and strength are the standards we are measured against, he was looked down upon.
+
+[shake rate=500 level=60 connected=1]test etst[/shake]
+
+[img height=25%]res://Assets/CGs/kappacg.jpg[/img]
+
+I thought he'd be frustrated and rebelious, with an [fade start=4 length=18]inferiority complex... [/fade]"

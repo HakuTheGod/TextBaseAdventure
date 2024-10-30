@@ -1,17 +1,11 @@
-[gd_scene load_steps=10 format=3 uid="uid://c8wxiu3coict0"]
+[gd_scene load_steps=5 format=3 uid="uid://c8wxiu3coict0"]
 
 [ext_resource type="Script" path="res://Scripts/content_data.gd" id="2_cmhuy"]
 [ext_resource type="Script" path="res://Scripts/content_container.gd" id="3_tobw1"]
-[ext_resource type="Texture2D" uid="uid://dj1i60euq14bl" path="res://Assets/43c7d33c8456c17aa920543468cf967b.jpg" id="4_dybjk"]
-[ext_resource type="Script" path="res://Scripts/choiceButtons.gd" id="5_x8rvc"]
-[ext_resource type="Script" path="res://Scripts/choice_container_2.gd" id="6_xfrb8"]
-[ext_resource type="Script" path="res://Scripts/choice_container_3.gd" id="7_ula0r"]
 [ext_resource type="Script" path="res://Scripts/inventory.gd" id="8_y3k1i"]
 [ext_resource type="Script" path="res://Scripts/inventoryClose.gd" id="10_7uaio"]
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_j5mf4"]
-
-[node name="Node" type="Node"]
+[node name="Game" type="Node"]
 
 [node name="PanelContainer" type="PanelContainer" parent="."]
 anchors_preset = 15
@@ -32,12 +26,13 @@ layout_mode = 2
 theme_override_constants/separation = 20
 script = ExtResource("2_cmhuy")
 
-[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/MarginContainer2/VBoxContainer"]
+[node name="Header" type="HBoxContainer" parent="PanelContainer/MarginContainer2/VBoxContainer"]
 custom_minimum_size = Vector2(0, 68)
 layout_mode = 2
 theme_override_constants/separation = 10
+alignment = 1
 
-[node name="Label" type="Label" parent="PanelContainer/MarginContainer2/VBoxContainer/HBoxContainer"]
+[node name="Stats" type="Label" parent="PanelContainer/MarginContainer2/VBoxContainer/Header"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 1
@@ -47,7 +42,7 @@ text = "  Hp: 49, MP: 55
   STR: 15, INT: 8, LCK: 10"
 vertical_alignment = 1
 
-[node name="ColorRect" type="ColorRect" parent="PanelContainer/MarginContainer2/VBoxContainer/HBoxContainer/Label"]
+[node name="ColorRect" type="ColorRect" parent="PanelContainer/MarginContainer2/VBoxContainer/Header/Stats"]
 modulate = Color(0.113725, 0.113725, 0.113725, 1)
 show_behind_parent = true
 layout_mode = 1
@@ -57,41 +52,28 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Button" type="Button" parent="PanelContainer/MarginContainer2/VBoxContainer/HBoxContainer"]
+[node name="Menu" type="Button" parent="PanelContainer/MarginContainer2/VBoxContainer/Header"]
 custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
 theme_override_font_sizes/font_size = 20
 text = "MENU"
 
-[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/MarginContainer2/VBoxContainer/HBoxContainer"]
-layout_mode = 2
-
-[node name="HSeparator" type="HSeparator" parent="PanelContainer/MarginContainer2/VBoxContainer"]
-layout_mode = 2
-
-[node name="ScrollContainer" type="ScrollContainer" parent="PanelContainer/MarginContainer2/VBoxContainer"]
+[node name="ChapterContainer" type="ScrollContainer" parent="PanelContainer/MarginContainer2/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="ContentContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer2/VBoxContainer/ScrollContainer"]
+[node name="ContentContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer2/VBoxContainer/ChapterContainer"]
 layout_mode = 2
 script = ExtResource("3_tobw1")
 
-[node name="Label" type="Label" parent="PanelContainer/MarginContainer2/VBoxContainer/ScrollContainer/ContentContainer"]
-unique_name_in_owner = true
+[node name="Title" type="Label" parent="PanelContainer/MarginContainer2/VBoxContainer/ChapterContainer/ContentContainer"]
+custom_minimum_size = Vector2(450, 0)
 layout_mode = 2
 theme_override_font_sizes/font_size = 22
 text = "TITLE"
 autowrap_mode = 3
 
-[node name="TextureRect" type="TextureRect" parent="PanelContainer/MarginContainer2/VBoxContainer/ScrollContainer/ContentContainer"]
-unique_name_in_owner = true
-custom_minimum_size = Vector2(460, 0)
-layout_mode = 2
-texture = ExtResource("4_dybjk")
-
-[node name="RichTextLabel" type="RichTextLabel" parent="PanelContainer/MarginContainer2/VBoxContainer/ScrollContainer/ContentContainer"]
-unique_name_in_owner = true
+[node name="ChapterText" type="RichTextLabel" parent="PanelContainer/MarginContainer2/VBoxContainer/ChapterContainer/ContentContainer"]
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_font_sizes/bold_italics_font_size = 20
@@ -105,184 +87,18 @@ asdasdasd"
 fit_content = true
 scroll_active = false
 
-[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/MarginContainer2/VBoxContainer/ScrollContainer/ContentContainer"]
-layout_mode = 2
-theme_override_constants/margin_left = 20
-theme_override_constants/margin_top = 20
-theme_override_constants/margin_right = 20
-theme_override_constants/margin_bottom = 20
-
-[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer2/VBoxContainer/ScrollContainer/ContentContainer/MarginContainer"]
-unique_name_in_owner = true
+[node name="ChoicesContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer2/VBoxContainer/ChapterContainer/ContentContainer"]
 layout_mode = 2
 theme_override_constants/separation = 15
 
-[node name="ChoiceContainer" type="PanelContainer" parent="PanelContainer/MarginContainer2/VBoxContainer/ScrollContainer/ContentContainer/MarginContainer/VBoxContainer"]
-unique_name_in_owner = true
-custom_minimum_size = Vector2(0, 45)
-layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxEmpty_j5mf4")
-script = ExtResource("5_x8rvc")
-
-[node name="Button" type="Button" parent="PanelContainer/MarginContainer2/VBoxContainer/ScrollContainer/ContentContainer/MarginContainer/VBoxContainer/ChoiceContainer"]
-layout_mode = 2
-focus_mode = 0
-
-[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/MarginContainer2/VBoxContainer/ScrollContainer/ContentContainer/MarginContainer/VBoxContainer/ChoiceContainer"]
-layout_mode = 2
-mouse_filter = 2
-theme_override_constants/margin_left = 15
-theme_override_constants/margin_top = 9
-theme_override_constants/margin_right = 15
-theme_override_constants/margin_bottom = 9
-
-[node name="Label" type="Label" parent="PanelContainer/MarginContainer2/VBoxContainer/ScrollContainer/ContentContainer/MarginContainer/VBoxContainer/ChoiceContainer/MarginContainer"]
-layout_mode = 2
-theme_override_font_sizes/font_size = 20
-text = "Choice Text"
-autowrap_mode = 3
-
-[node name="ChoiceContainer2" type="PanelContainer" parent="PanelContainer/MarginContainer2/VBoxContainer/ScrollContainer/ContentContainer/MarginContainer/VBoxContainer"]
-unique_name_in_owner = true
-custom_minimum_size = Vector2(0, 45)
-layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxEmpty_j5mf4")
-script = ExtResource("6_xfrb8")
-choice_index = 2
-
-[node name="Button" type="Button" parent="PanelContainer/MarginContainer2/VBoxContainer/ScrollContainer/ContentContainer/MarginContainer/VBoxContainer/ChoiceContainer2"]
-layout_mode = 2
-focus_mode = 0
-
-[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/MarginContainer2/VBoxContainer/ScrollContainer/ContentContainer/MarginContainer/VBoxContainer/ChoiceContainer2"]
-layout_mode = 2
-mouse_filter = 2
-theme_override_constants/margin_left = 15
-theme_override_constants/margin_top = 9
-theme_override_constants/margin_right = 15
-theme_override_constants/margin_bottom = 9
-
-[node name="Label" type="Label" parent="PanelContainer/MarginContainer2/VBoxContainer/ScrollContainer/ContentContainer/MarginContainer/VBoxContainer/ChoiceContainer2/MarginContainer"]
-layout_mode = 2
-theme_override_font_sizes/font_size = 20
-text = "Choice Text"
-autowrap_mode = 3
-
-[node name="ChoiceContainer3" type="PanelContainer" parent="PanelContainer/MarginContainer2/VBoxContainer/ScrollContainer/ContentContainer/MarginContainer/VBoxContainer"]
-unique_name_in_owner = true
-custom_minimum_size = Vector2(0, 45)
-layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxEmpty_j5mf4")
-script = ExtResource("7_ula0r")
-choice_index = 3
-
-[node name="Button" type="Button" parent="PanelContainer/MarginContainer2/VBoxContainer/ScrollContainer/ContentContainer/MarginContainer/VBoxContainer/ChoiceContainer3"]
-layout_mode = 2
-focus_mode = 0
-
-[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/MarginContainer2/VBoxContainer/ScrollContainer/ContentContainer/MarginContainer/VBoxContainer/ChoiceContainer3"]
-layout_mode = 2
-mouse_filter = 2
-theme_override_constants/margin_left = 15
-theme_override_constants/margin_top = 9
-theme_override_constants/margin_right = 15
-theme_override_constants/margin_bottom = 9
-
-[node name="Label" type="Label" parent="PanelContainer/MarginContainer2/VBoxContainer/ScrollContainer/ContentContainer/MarginContainer/VBoxContainer/ChoiceContainer3/MarginContainer"]
-layout_mode = 2
-theme_override_font_sizes/font_size = 20
-text = "Choice Text"
-autowrap_mode = 3
-
-[node name="ChoiceContainer4" type="PanelContainer" parent="PanelContainer/MarginContainer2/VBoxContainer/ScrollContainer/ContentContainer/MarginContainer/VBoxContainer"]
-unique_name_in_owner = true
-custom_minimum_size = Vector2(0, 45)
-layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxEmpty_j5mf4")
-script = ExtResource("7_ula0r")
-choice_index = 3
-
-[node name="Button" type="Button" parent="PanelContainer/MarginContainer2/VBoxContainer/ScrollContainer/ContentContainer/MarginContainer/VBoxContainer/ChoiceContainer4"]
-layout_mode = 2
-focus_mode = 0
-
-[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/MarginContainer2/VBoxContainer/ScrollContainer/ContentContainer/MarginContainer/VBoxContainer/ChoiceContainer4"]
-layout_mode = 2
-mouse_filter = 2
-theme_override_constants/margin_left = 15
-theme_override_constants/margin_top = 9
-theme_override_constants/margin_right = 15
-theme_override_constants/margin_bottom = 9
-
-[node name="Label" type="Label" parent="PanelContainer/MarginContainer2/VBoxContainer/ScrollContainer/ContentContainer/MarginContainer/VBoxContainer/ChoiceContainer4/MarginContainer"]
-layout_mode = 2
-theme_override_font_sizes/font_size = 20
-text = "Choice Text"
-autowrap_mode = 3
-
-[node name="ChoiceContainer5" type="PanelContainer" parent="PanelContainer/MarginContainer2/VBoxContainer/ScrollContainer/ContentContainer/MarginContainer/VBoxContainer"]
-unique_name_in_owner = true
-custom_minimum_size = Vector2(0, 45)
-layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxEmpty_j5mf4")
-script = ExtResource("7_ula0r")
-choice_index = 3
-
-[node name="Button" type="Button" parent="PanelContainer/MarginContainer2/VBoxContainer/ScrollContainer/ContentContainer/MarginContainer/VBoxContainer/ChoiceContainer5"]
-layout_mode = 2
-focus_mode = 0
-
-[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/MarginContainer2/VBoxContainer/ScrollContainer/ContentContainer/MarginContainer/VBoxContainer/ChoiceContainer5"]
-layout_mode = 2
-mouse_filter = 2
-theme_override_constants/margin_left = 15
-theme_override_constants/margin_top = 9
-theme_override_constants/margin_right = 15
-theme_override_constants/margin_bottom = 9
-
-[node name="Label" type="Label" parent="PanelContainer/MarginContainer2/VBoxContainer/ScrollContainer/ContentContainer/MarginContainer/VBoxContainer/ChoiceContainer5/MarginContainer"]
-layout_mode = 2
-theme_override_font_sizes/font_size = 20
-text = "Choice Text"
-autowrap_mode = 3
-
-[node name="ChoiceContainer6" type="PanelContainer" parent="PanelContainer/MarginContainer2/VBoxContainer/ScrollContainer/ContentContainer/MarginContainer/VBoxContainer"]
-unique_name_in_owner = true
-custom_minimum_size = Vector2(0, 45)
-layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxEmpty_j5mf4")
-script = ExtResource("7_ula0r")
-choice_index = 3
-
-[node name="Button" type="Button" parent="PanelContainer/MarginContainer2/VBoxContainer/ScrollContainer/ContentContainer/MarginContainer/VBoxContainer/ChoiceContainer6"]
-layout_mode = 2
-focus_mode = 0
-
-[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/MarginContainer2/VBoxContainer/ScrollContainer/ContentContainer/MarginContainer/VBoxContainer/ChoiceContainer6"]
-layout_mode = 2
-mouse_filter = 2
-theme_override_constants/margin_left = 15
-theme_override_constants/margin_top = 9
-theme_override_constants/margin_right = 15
-theme_override_constants/margin_bottom = 9
-
-[node name="Label" type="Label" parent="PanelContainer/MarginContainer2/VBoxContainer/ScrollContainer/ContentContainer/MarginContainer/VBoxContainer/ChoiceContainer6/MarginContainer"]
-layout_mode = 2
-theme_override_font_sizes/font_size = 20
-text = "Choice Text"
-autowrap_mode = 3
-
-[node name="HSeparator2" type="HSeparator" parent="PanelContainer/MarginContainer2/VBoxContainer"]
+[node name="BottomNavBar" type="HBoxContainer" parent="PanelContainer/MarginContainer2/VBoxContainer"]
 layout_mode = 2
 
-[node name="HBoxContainer2" type="HBoxContainer" parent="PanelContainer/MarginContainer2/VBoxContainer"]
-layout_mode = 2
-
-[node name="PanelContainer" type="PanelContainer" parent="PanelContainer/MarginContainer2/VBoxContainer/HBoxContainer2"]
+[node name="PanelContainer" type="PanelContainer" parent="PanelContainer/MarginContainer2/VBoxContainer/BottomNavBar"]
 layout_mode = 2
 script = ExtResource("8_y3k1i")
 
-[node name="Button" type="Button" parent="PanelContainer/MarginContainer2/VBoxContainer/HBoxContainer2/PanelContainer"]
+[node name="Button" type="Button" parent="PanelContainer/MarginContainer2/VBoxContainer/BottomNavBar/PanelContainer"]
 layout_mode = 2
 text = "INVENOTRY"
 
@@ -387,11 +203,5 @@ size_flags_vertical = 3
 layout_mode = 2
 size_flags_vertical = 8
 
-[connection signal="pressed" from="PanelContainer/MarginContainer2/VBoxContainer/ScrollContainer/ContentContainer/MarginContainer/VBoxContainer/ChoiceContainer/Button" to="PanelContainer/MarginContainer2/VBoxContainer/ScrollContainer/ContentContainer/MarginContainer/VBoxContainer/ChoiceContainer" method="_on_button_pressed"]
-[connection signal="pressed" from="PanelContainer/MarginContainer2/VBoxContainer/ScrollContainer/ContentContainer/MarginContainer/VBoxContainer/ChoiceContainer2/Button" to="PanelContainer/MarginContainer2/VBoxContainer/ScrollContainer/ContentContainer/MarginContainer/VBoxContainer/ChoiceContainer2" method="_on_button_pressed"]
-[connection signal="pressed" from="PanelContainer/MarginContainer2/VBoxContainer/ScrollContainer/ContentContainer/MarginContainer/VBoxContainer/ChoiceContainer3/Button" to="PanelContainer/MarginContainer2/VBoxContainer/ScrollContainer/ContentContainer/MarginContainer/VBoxContainer/ChoiceContainer3" method="_on_button_pressed"]
-[connection signal="pressed" from="PanelContainer/MarginContainer2/VBoxContainer/ScrollContainer/ContentContainer/MarginContainer/VBoxContainer/ChoiceContainer4/Button" to="PanelContainer/MarginContainer2/VBoxContainer/ScrollContainer/ContentContainer/MarginContainer/VBoxContainer/ChoiceContainer4" method="_on_button_pressed"]
-[connection signal="pressed" from="PanelContainer/MarginContainer2/VBoxContainer/ScrollContainer/ContentContainer/MarginContainer/VBoxContainer/ChoiceContainer5/Button" to="PanelContainer/MarginContainer2/VBoxContainer/ScrollContainer/ContentContainer/MarginContainer/VBoxContainer/ChoiceContainer5" method="_on_button_pressed"]
-[connection signal="pressed" from="PanelContainer/MarginContainer2/VBoxContainer/ScrollContainer/ContentContainer/MarginContainer/VBoxContainer/ChoiceContainer6/Button" to="PanelContainer/MarginContainer2/VBoxContainer/ScrollContainer/ContentContainer/MarginContainer/VBoxContainer/ChoiceContainer6" method="_on_button_pressed"]
-[connection signal="pressed" from="PanelContainer/MarginContainer2/VBoxContainer/HBoxContainer2/PanelContainer/Button" to="PanelContainer/MarginContainer2/VBoxContainer/HBoxContainer2/PanelContainer" method="_on_button_pressed"]
+[connection signal="pressed" from="PanelContainer/MarginContainer2/VBoxContainer/BottomNavBar/PanelContainer/Button" to="PanelContainer/MarginContainer2/VBoxContainer/BottomNavBar/PanelContainer" method="_on_button_pressed"]
 [connection signal="pressed" from="inventory/MarginContainer2/VBoxContainer/HBoxContainer/PanelContainer/Button" to="inventory/MarginContainer2/VBoxContainer/HBoxContainer/PanelContainer" method="_on_button_pressed"]
