@@ -1,8 +1,15 @@
 extends VBoxContainer
 
-@onready var label: Label = $Title
-@onready var rich_text_label: RichTextLabel = $ChapterText
+@onready var title: Label = $Panel/Title
+
+@onready var rich_text_label: RichTextLabel = $Panel2/ChapterText
+
 @onready var choices_container: VBoxContainer = $ChoicesContainer
+@onready var hud: Label = $"../../../../Header/Panel/Hud"
+@onready var stats: RichTextLabel = $"../../BottomNavBar/HBoxContainer/Panel2/RichTextLabel"
+
+
+
 
 var content_dict: Dictionary
 var current_page: String
@@ -26,6 +33,7 @@ func set_content(output_value) -> void:
 	set_choice_btn(output_value)
 	set_items(output_value)
 	remove_items(output_value)
+	setInitialStats()
 
 func clear_choices()-> void:
 	for choice in choices_container.get_children():
@@ -33,7 +41,7 @@ func clear_choices()-> void:
 		choice.queue_free()
 
 func set_title(output_value) -> void:
-	label.text = str(output_value["title"])
+	title.text = str(output_value["title"])
 
 
 func set_narr_text(output_value) -> void:
@@ -53,7 +61,8 @@ func set_choice_btn(output_value) -> void:
 			choiceNode.set_text(str(output_value["choices"][str(choice)]["text"]))
 			choiceNode.connect("choice_btn_pressed", Callable(self, "process_choice"))
 	else:
-		get_tree().quit()	
+		#get_tree().quit()	
+		pass
 
 func set_items(output_value):
 	if output_value.has("items_obtained"):
@@ -66,4 +75,20 @@ func remove_items(output_value):
 		for i in output_value["items_used"]:
 			var item = str(output_value["items_used"][str(i)]["text"])
 			InventoryInside.remove(item)
-			
+
+func setInitialStats() -> void:
+	var stri: int = PC.getStr()
+	var spd: int = PC.getSpd()
+	var intel: int = PC.getInt()
+	var lck: int = PC.getLck()
+	var fth: int = PC.getFth()
+	var hp: int = PC.getHp()
+	var mp: int = PC.getMp()
+	
+	var hudText = "HP: " + str(hp) + "\n" + "MP: " + str(mp)
+	
+	var statText = "Str: " + str(stri) + "  Spd: " + str(spd) + "  Int: " + str(intel) + "\n" + "Lck: " + str(lck) + "  Fth: " + str(fth) 
+	hud.text = hudText
+	stats.text = statText
+	
+	

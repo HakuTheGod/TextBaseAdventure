@@ -2,40 +2,6 @@
 	"000_prologue": {
 		"title": "Prologue",
 		"narr-text": "pipi",
-		"choices": {
-			"1": {
-				"text": "Continue",
-				"output": "001_intro"
-			},
-			"2": {
-				"text": "Quit",
-				"output": "00F_outro_quit"
-			},
-			"3": {
-				"text": "Quit",
-				"output": "00F_outro_quit"
-			},
-			"4": {
-				"text": "Quit",
-				"output": "00F_outro_quit"
-			},
-			"5": {
-				"text": "Quit",
-				"output": "00F_outro_quit"
-			},
-			"6": {
-				"text": "Quit",
-				"output": "00F_outro_quit"
-			},
-			"7": {
-				"text": "Quit",
-				"output": "00F_outro_quit"
-			},
-			"8": {
-				"text": "Quit",
-				"output": "00F_outro_quit"
-			}
-		}
 	},
 	"001_intro": {
 		"title": "Chapter 1: A new journey!",

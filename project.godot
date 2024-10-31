@@ -19,6 +19,7 @@ config/icon="res://icon.svg"
 
 ContentData="*res://Scripts/content_data.gd"
 InventoryInside="*res://Scripts/inventory/inventory_inside.gd"
+PC="*res://Scripts/player.gd"
 
 [display]
 

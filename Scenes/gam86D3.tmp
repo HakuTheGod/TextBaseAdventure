@@ -6,8 +6,8 @@
 [ext_resource type="Script" path="res://Scripts/inventory.gd" id="8_y3k1i"]
 [ext_resource type="Script" path="res://Scripts/inventoryClose.gd" id="10_7uaio"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_oic1o"]
-bg_color = Color(0, 0, 0, 0.345098)
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pkeuj"]
+bg_color = Color(0, 0, 0, 0.490196)
 border_width_left = 3
 border_width_top = 3
 border_width_right = 3
@@ -105,29 +105,25 @@ grow_horizontal = 2
 theme_override_constants/separation = 10
 alignment = 1
 
-[node name="Panel" type="Panel" parent="PanelContainer/MarginContainer2/VBoxContainer/TextureRect/Header"]
+[node name="Stats" type="Label" parent="PanelContainer/MarginContainer2/VBoxContainer/TextureRect/Header"]
 layout_mode = 2
 size_flags_horizontal = 3
-theme_override_styles/panel = SubResource("StyleBoxFlat_oic1o")
+size_flags_vertical = 1
+theme_override_constants/outline_size = 5
+theme_override_font_sizes/font_size = 23
+text = "  Hp: 49, MP: 55
+  STR: 15, INT: 8, LCK: 10"
+vertical_alignment = 1
 
-[node name="Hud" type="Label" parent="PanelContainer/MarginContainer2/VBoxContainer/TextureRect/Header/Panel"]
+[node name="Panel" type="Panel" parent="PanelContainer/MarginContainer2/VBoxContainer/TextureRect/Header/Stats"]
+show_behind_parent = true
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 8.0
-offset_top = 5.0
-offset_right = -9.0
-offset_bottom = -4.0
 grow_horizontal = 2
 grow_vertical = 2
-size_flags_horizontal = 3
-size_flags_vertical = 1
-theme_override_constants/outline_size = 5
-theme_override_font_sizes/font_size = 20
-text = "  Hp: 49, MP: 55
-  STR: 15, INT: 8, LCK: 10"
-vertical_alignment = 1
+theme_override_styles/panel = SubResource("StyleBoxFlat_pkeuj")
 
 [node name="Menu" type="Button" parent="PanelContainer/MarginContainer2/VBoxContainer/TextureRect/Header"]
 custom_minimum_size = Vector2(100, 0)
@@ -173,9 +169,8 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 7.0
 offset_top = -1.0
-offset_right = -13.0
+offset_right = -10.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_vertical = 3
@@ -184,7 +179,6 @@ text = " TITLE"
 autowrap_mode = 3
 
 [node name="Panel2" type="Panel" parent="PanelContainer/MarginContainer2/VBoxContainer/TextureRect/PanelContainer/VBoxContainer/PanelContainer/ContentContainer"]
-clip_contents = true
 custom_minimum_size = Vector2(0, 164)
 layout_mode = 2
 size_flags_vertical = 3
@@ -195,17 +189,14 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 8.0
-offset_top = 9.0
-offset_right = -8.0
-offset_bottom = -11.0
+offset_top = -5.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_vertical = 10
-theme_override_font_sizes/bold_italics_font_size = 16
-theme_override_font_sizes/italics_font_size = 16
-theme_override_font_sizes/mono_font_size = 16
-theme_override_font_sizes/normal_font_size = 16
+theme_override_font_sizes/bold_italics_font_size = 20
+theme_override_font_sizes/italics_font_size = 20
+theme_override_font_sizes/mono_font_size = 20
+theme_override_font_sizes/normal_font_size = 20
 theme_override_font_sizes/bold_font_size = 20
 bbcode_enabled = true
 text = " dfafasfasfasfasf
@@ -251,10 +242,7 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 7.0
-offset_top = 6.0
-offset_right = -5.0
-offset_bottom = -7.0
+offset_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4
@@ -277,18 +265,11 @@ layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_svxtu")
 
 [node name="RichTextLabel2" type="RichTextLabel" parent="PanelContainer/MarginContainer2/VBoxContainer/TextureRect/PanelContainer/VBoxContainer/BottomNavBar/HBoxContainer/Panel"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -39.0
-offset_top = -16.0
-offset_right = 39.0
-offset_bottom = 16.0
-grow_horizontal = 2
-grow_vertical = 2
+layout_mode = 2
+offset_left = 9.0
+offset_top = 18.0
+offset_right = 87.0
+offset_bottom = 50.0
 size_flags_horizontal = 3
 size_flags_vertical = 4
 theme_override_font_sizes/bold_italics_font_size = 20
