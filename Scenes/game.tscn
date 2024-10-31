@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://c8wxiu3coict0"]
+[gd_scene load_steps=16 format=3 uid="uid://c8wxiu3coict0"]
 
 [ext_resource type="Texture2D" uid="uid://5dniawpuw2ee" path="res://icon.svg" id="2_16pmv"]
 [ext_resource type="Script" path="res://Scripts/content_data.gd" id="2_cmhuy"]
@@ -8,6 +8,14 @@
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_oic1o"]
 bg_color = Color(0, 0, 0, 0.345098)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_blend = true
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ouet2"]
+bg_color = Color(0, 0, 0, 0.223529)
 border_width_left = 3
 border_width_top = 3
 border_width_right = 3
@@ -40,6 +48,14 @@ border_blend = true
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_boyxs"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_blend = true
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_q4ugp"]
+bg_color = Color(0, 0, 0, 0.12549)
 border_width_left = 3
 border_width_top = 3
 border_width_right = 3
@@ -134,6 +150,7 @@ custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
 theme_override_constants/outline_size = 5
 theme_override_font_sizes/font_size = 20
+theme_override_styles/hover = SubResource("StyleBoxFlat_ouet2")
 theme_override_styles/normal = SubResource("StyleBoxFlat_gnama")
 text = "MENU"
 
@@ -237,6 +254,7 @@ theme_override_constants/separation = 0
 
 [node name="Button" type="Button" parent="PanelContainer/MarginContainer2/VBoxContainer/TextureRect/PanelContainer/VBoxContainer/BottomNavBar/HBoxContainer"]
 layout_mode = 2
+theme_override_styles/hover = SubResource("StyleBoxFlat_q4ugp")
 theme_override_styles/normal = SubResource("StyleBoxFlat_j1d7q")
 text = "INVENTORY"
 
