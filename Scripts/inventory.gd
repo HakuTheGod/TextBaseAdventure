@@ -1,7 +1,8 @@
 extends PanelContainer
 
-@onready var inventory: PanelContainer = $"../../../../../../../../inventory"
-@onready var label: Label = $"../../../../../../../../inventory/MarginContainer2/VBoxContainer/ScrollContainer/VBoxContainer/Label"
+@onready var inventory: PanelContainer = $"../../inventory"
+
+@onready var label: Label = $"../../inventory/MarginContainer2/VBoxContainer/ScrollContainer/VBoxContainer/Label"
 
 
 

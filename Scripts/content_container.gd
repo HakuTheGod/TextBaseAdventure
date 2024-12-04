@@ -1,12 +1,15 @@
 extends VBoxContainer
 
-@onready var title: Label = $Panel/Title
+@onready var title: Label = $"../../../../Panel/Title"
+
 
 @onready var rich_text_label: RichTextLabel = $Panel2/ChapterText
 
 @onready var choices_container: VBoxContainer = $ChoicesContainer
-@onready var hud: Label = $"../../../../Header/Panel/Hud"
-@onready var stats: RichTextLabel = $"../../BottomNavBar/HBoxContainer/Panel2/RichTextLabel"
+@onready var hud: RichTextLabel = $"../../../../VBoxContainer/Panel2/hud"
+
+
+
 
 
 
@@ -85,10 +88,7 @@ func setInitialStats() -> void:
 	var hp: int = PC.getHp()
 	var mp: int = PC.getMp()
 	
-	var hudText = "HP: " + str(hp) + "\n" + "MP: " + str(mp)
-	
-	var statText = "Str: " + str(stri) + "  Spd: " + str(spd) + "  Int: " + str(intel) + "\n" + "Lck: " + str(lck) + "  Fth: " + str(fth) 
+	var hudText = " HP: " + str(hp) + "\n" + " MP: " + str(mp) + "\n" +" Str: " + str(stri) + "\n" + " Spd: " + str(spd) + "\n" + " Int: " + str(intel) + "\n" + " Lck: " + str(lck) + "\n" + " Fth: " + str(fth) 
 	hud.text = hudText
-	stats.text = statText
 	
 	

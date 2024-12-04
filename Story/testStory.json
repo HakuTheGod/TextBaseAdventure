@@ -2,43 +2,14 @@
 	"000_prologue": {
 		"title": "Prologue",
 		"picture": "res://Assets/43c7d33c8456c17aa920543468cf967b.jpg",
-		"narr-text": "res://Story/Chapters/prologue.txt",
-		"choices": {
-			"1": {
-				"text": "Continue",
-				"output": "001_intro"
-			},
-			"2": {
-				"text": "Quit",
-				"output": "00F_outro_quit"
-			}
-		}
+		"narr-text": "You slowly awaken from your deep slumber. Around you, complete darkness. An endless void engulfs your body, making your breathing faster and increasing your heart rate as if your heart would sprout legs and run away. Your body limp as stone your mind petrified. You cannot help but feel a chill running down your spine as your eyes search desperately for a warm source of light to drive the loneliness away.
+Amidst your despair you hear something. A silent whisper at first, however, as you keep focusing, it starts getting louder and louder until you can hear it as if the one speaking is right in front of you.",
+		"next_scene": "rondo_01"
 	},
-	"001_intro": {
-		"title": "Chapter 1: A new journey!",
-		"narr-text": "Long ago, there was test text who wanted to rule the kingdom of text test...",
-		"choices": {
-			"1": {
-				"text": "Continue",
-				"output": "002_outro"
-			},
-			"2": {
-				"text": "This story is BS!",
-				"output": "002_outro"
-			},
-			"3": {
-				"text": "Go back.",
-				"output": "001_intro"
-			}
-		},
-		"items_obtained": {
-			"1": {
-				"text": "Castle Key"
-			},
-			"2": {
-				"text": "BS Sword"
-			}
-		}
+	"rondo_01": {
+		"name": "Rondo",
+		"picture": "res://Assets/tia.png",
+		"narr-text": "[color=pink]Greetings, traveler from beyond the wall[/color]"
 	},
 	"002_outro": {
 		"title": "Chapter 2: The end.",
