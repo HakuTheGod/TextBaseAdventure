@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://burnpl7mubkei"]
+
+[ext_resource type="Script" path="res://Scripts/dbpreview.gd" id="1_t4y86"]
+
+[node name="BGPreview" type="Node"]
+script = ExtResource("1_t4y86")
