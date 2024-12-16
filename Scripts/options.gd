@@ -6,8 +6,12 @@ extends Button
 @onready var general_options: VBoxContainer = $"../../../../../../VBoxContainer"
 @onready var text_dis: RichTextLabel = $"../../../../../../VBoxContainer/Panel/HBoxContainer/Panel/Panel/RichTextLabel"
 
+func _process(delta: float) -> void:
+	pass
+
 
 func _on_pressed() -> void:
+	GlobVar.on_start_screen = 2
 	bgblurr.visible = true
 	options_menu.visible = true
 	text_player.play(general_options.text_animation)

@@ -1,15 +1,18 @@
-[gd_scene load_steps=69 format=3 uid="uid://c8wxiu3coict0"]
+[gd_scene load_steps=81 format=3 uid="uid://c8wxiu3coict0"]
 
-[ext_resource type="Script" path="res://Scripts/content_data.gd" id="2_cmhuy"]
+[ext_resource type="Script" path="res://Scripts/globVar.gd" id="1_igfnq"]
 [ext_resource type="Texture2D" uid="uid://cmua4d3ggcnn5" path="res://Assets/CGs/AI_vn_backgrounds/white.png" id="2_qd05o"]
 [ext_resource type="Texture2D" uid="uid://4r27iylo5178" path="res://Assets/CGs/45-454893_final-fantasy-x-logo-by-eldi13-on-deviantart-final-fantasy-x-background.png" id="3_s3yju"]
 [ext_resource type="Script" path="res://Scripts/focus.gd" id="4_d5dui"]
 [ext_resource type="Script" path="res://Scripts/options.gd" id="5_ha077"]
+[ext_resource type="Script" path="res://Scripts/startBtn.gd" id="5_vt1bk"]
 [ext_resource type="Texture2D" uid="uid://cpsmrp55x6l6f" path="res://Assets/istockphoto-654922866-612x612.jpg" id="6_g7v7h"]
 [ext_resource type="Texture2D" uid="uid://22871mtkh2py" path="res://Assets/mftH3p2.jpg" id="6_l24b5"]
 [ext_resource type="ButtonGroup" uid="uid://by8dr7mgqoy2y" path="res://Util/Settings/Display/displayMode.tres" id="6_mcssi"]
+[ext_resource type="Script" path="res://Scripts/quit.gd" id="6_r7o8h"]
 [ext_resource type="Script" path="res://Scripts/general_options.gd" id="7_jpx7l"]
 [ext_resource type="Script" path="res://Scripts/toggle.gd" id="8_vtidb"]
+[ext_resource type="Script" path="res://Scripts/start_label.gd" id="8_ybigg"]
 [ext_resource type="Script" path="res://Scripts/closeOptions.gd" id="9_eo2su"]
 [ext_resource type="Script" path="res://Scripts/text_speed_option.gd" id="10_1xi6n"]
 [ext_resource type="Script" path="res://Scripts/inventoryClose.gd" id="10_7uaio"]
@@ -32,6 +35,18 @@ border_width_top = 10
 border_width_right = 10
 border_width_bottom = 10
 border_color = Color(1, 1, 1, 1)
+border_blend = true
+corner_radius_top_left = 25
+corner_radius_top_right = 25
+corner_radius_bottom_right = 25
+corner_radius_bottom_left = 25
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_iuxne"]
+bg_color = Color(0, 0, 0, 0.513726)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
 border_blend = true
 corner_radius_top_left = 25
 corner_radius_top_right = 25
@@ -63,7 +78,121 @@ corner_radius_top_right = 25
 corner_radius_bottom_right = 25
 corner_radius_bottom_left = 25
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1utoq"]
+bg_color = Color(0, 0, 0, 0.513726)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_blend = true
+corner_radius_top_left = 25
+corner_radius_top_right = 25
+corner_radius_bottom_right = 25
+corner_radius_bottom_left = 25
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_05kf8"]
+bg_color = Color(0, 0, 0, 0.513726)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_blend = true
+corner_radius_top_left = 25
+corner_radius_top_right = 25
+corner_radius_bottom_right = 25
+corner_radius_bottom_left = 25
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bkig8"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cef2j"]
+bg_color = Color(0, 0, 0, 0.513726)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_blend = true
+corner_radius_top_left = 25
+corner_radius_top_right = 25
+corner_radius_bottom_right = 25
+corner_radius_bottom_left = 25
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xrvhg"]
+bg_color = Color(0, 0, 0, 0.513726)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_blend = true
+corner_radius_top_left = 25
+corner_radius_top_right = 25
+corner_radius_bottom_right = 25
+corner_radius_bottom_left = 25
+
+[sub_resource type="Animation" id="Animation_1c3yk"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("start_label:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("menu:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_c68fg"]
+resource_name = "fade_start"
+length = 2.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("start_label:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1, 2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_kglum"]
+resource_name = "show_start"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("menu:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_7ydfx"]
+_data = {
+"RESET": SubResource("Animation_1c3yk"),
+"fade_start": SubResource("Animation_c68fg"),
+"show_start": SubResource("Animation_kglum")
+}
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_btuh4"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
@@ -99,22 +228,6 @@ tracks/0/keys = {
 "values": [0.0]
 }
 
-[sub_resource type="Animation" id="Animation_7cbwn"]
-resource_name = "Text_speed_medium"
-length = 0.5
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("RichTextLabel:visible_ratio")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.5),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [0.0, 1.0]
-}
-
 [sub_resource type="Animation" id="Animation_bb8tv"]
 resource_name = "Text_speed_fast"
 length = 0.25
@@ -147,6 +260,22 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [1.0]
+}
+
+[sub_resource type="Animation" id="Animation_7cbwn"]
+resource_name = "Text_speed_medium"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("RichTextLabel:visible_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
 }
 
 [sub_resource type="Animation" id="Animation_fotxs"]
@@ -385,13 +514,14 @@ layout_mode = 2
 [node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer2"]
 layout_mode = 2
 theme_override_constants/separation = 0
-script = ExtResource("2_cmhuy")
+script = ExtResource("1_igfnq")
 
 [node name="TextureRect" type="TextureRect" parent="PanelContainer/MarginContainer2/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
 texture = ExtResource("2_qd05o")
 expand_mode = 2
+script = ExtResource("8_ybigg")
 
 [node name="TextureRect" type="TextureRect" parent="PanelContainer/MarginContainer2/VBoxContainer/TextureRect"]
 layout_mode = 2
@@ -403,7 +533,8 @@ size_flags_horizontal = 4
 texture = ExtResource("3_s3yju")
 expand_mode = 1
 
-[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer2/VBoxContainer/TextureRect"]
+[node name="menu" type="VBoxContainer" parent="PanelContainer/MarginContainer2/VBoxContainer/TextureRect"]
+modulate = Color(1, 1, 1, 0)
 layout_mode = 2
 offset_left = 526.0
 offset_top = 448.0
@@ -414,53 +545,97 @@ grow_vertical = 2
 theme_override_constants/separation = 0
 script = ExtResource("4_d5dui")
 
-[node name="start" type="Button" parent="PanelContainer/MarginContainer2/VBoxContainer/TextureRect/VBoxContainer"]
+[node name="quit2" type="Button" parent="PanelContainer/MarginContainer2/VBoxContainer/TextureRect/menu"]
 layout_mode = 2
 size_flags_vertical = 3
+theme_override_colors/font_disabled_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 24
 theme_override_styles/focus = SubResource("StyleBoxFlat_a47tf")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_iuxne")
 theme_override_styles/hover = SubResource("StyleBoxFlat_1y3lw")
 theme_override_styles/normal = SubResource("StyleBoxFlat_s0f5h")
+disabled = true
 text = "START"
+script = ExtResource("5_vt1bk")
 
-[node name="continue" type="Button" parent="PanelContainer/MarginContainer2/VBoxContainer/TextureRect/VBoxContainer"]
+[node name="continue" type="Button" parent="PanelContainer/MarginContainer2/VBoxContainer/TextureRect/menu"]
 layout_mode = 2
 size_flags_vertical = 3
+theme_override_colors/font_disabled_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 24
 theme_override_styles/focus = SubResource("StyleBoxFlat_a47tf")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_1utoq")
 theme_override_styles/hover = SubResource("StyleBoxFlat_1y3lw")
 theme_override_styles/normal = SubResource("StyleBoxFlat_s0f5h")
+disabled = true
 text = "CONTINUE"
 
-[node name="options" type="Button" parent="PanelContainer/MarginContainer2/VBoxContainer/TextureRect/VBoxContainer"]
+[node name="options" type="Button" parent="PanelContainer/MarginContainer2/VBoxContainer/TextureRect/menu"]
 layout_mode = 2
 size_flags_vertical = 3
+theme_override_colors/font_disabled_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 24
 theme_override_styles/focus = SubResource("StyleBoxFlat_a47tf")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_05kf8")
 theme_override_styles/hover = SubResource("StyleBoxFlat_1y3lw")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_bkig8")
 theme_override_styles/normal = SubResource("StyleBoxFlat_s0f5h")
+disabled = true
 action_mode = 0
 text = "OPTIONS"
 script = ExtResource("5_ha077")
 
-[node name="extras" type="Button" parent="PanelContainer/MarginContainer2/VBoxContainer/TextureRect/VBoxContainer"]
+[node name="extras" type="Button" parent="PanelContainer/MarginContainer2/VBoxContainer/TextureRect/menu"]
 layout_mode = 2
 size_flags_vertical = 3
+theme_override_colors/font_disabled_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 24
 theme_override_styles/focus = SubResource("StyleBoxFlat_a47tf")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_cef2j")
 theme_override_styles/hover = SubResource("StyleBoxFlat_1y3lw")
 theme_override_styles/normal = SubResource("StyleBoxFlat_s0f5h")
+disabled = true
 text = "EXTRAS"
 
-[node name="quit" type="Button" parent="PanelContainer/MarginContainer2/VBoxContainer/TextureRect/VBoxContainer"]
+[node name="quit" type="Button" parent="PanelContainer/MarginContainer2/VBoxContainer/TextureRect/menu"]
 layout_mode = 2
 size_flags_vertical = 3
+theme_override_colors/font_disabled_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 24
 theme_override_styles/focus = SubResource("StyleBoxFlat_a47tf")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_xrvhg")
 theme_override_styles/hover = SubResource("StyleBoxFlat_1y3lw")
 theme_override_styles/normal = SubResource("StyleBoxFlat_s0f5h")
+disabled = true
 text = "QUIT"
+script = ExtResource("6_r7o8h")
+
+[node name="start_label" type="RichTextLabel" parent="PanelContainer/MarginContainer2/VBoxContainer/TextureRect"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -160.0
+offset_top = 134.0
+offset_right = 172.0
+offset_bottom = 186.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/bold_italics_font_size = 36
+theme_override_font_sizes/italics_font_size = 36
+theme_override_font_sizes/mono_font_size = 36
+theme_override_font_sizes/normal_font_size = 36
+theme_override_font_sizes/bold_font_size = 36
+bbcode_enabled = true
+text = "[i]- CLICK TO START -[/i]"
+
+[node name="start_animation" type="AnimationPlayer" parent="PanelContainer/MarginContainer2/VBoxContainer/TextureRect"]
+libraries = {
+"": SubResource("AnimationLibrary_7ydfx")
+}
 
 [node name="Panel" type="Panel" parent="PanelContainer"]
 visible = false
@@ -2048,8 +2223,11 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_84w6i")
 disabled = true
 text = "Contols"
 
-[connection signal="mouse_entered" from="PanelContainer/MarginContainer2/VBoxContainer/TextureRect/VBoxContainer/options" to="PanelContainer/MarginContainer2/VBoxContainer/TextureRect/VBoxContainer/options" method="_on_mouse_entered"]
-[connection signal="pressed" from="PanelContainer/MarginContainer2/VBoxContainer/TextureRect/VBoxContainer/options" to="PanelContainer/MarginContainer2/VBoxContainer/TextureRect/VBoxContainer/options" method="_on_pressed"]
+[connection signal="pressed" from="PanelContainer/MarginContainer2/VBoxContainer/TextureRect/menu/quit2" to="PanelContainer/MarginContainer2/VBoxContainer/TextureRect/menu/quit2" method="_on_pressed"]
+[connection signal="mouse_entered" from="PanelContainer/MarginContainer2/VBoxContainer/TextureRect/menu/options" to="PanelContainer/MarginContainer2/VBoxContainer/TextureRect/menu/options" method="_on_mouse_entered"]
+[connection signal="pressed" from="PanelContainer/MarginContainer2/VBoxContainer/TextureRect/menu/options" to="PanelContainer/MarginContainer2/VBoxContainer/TextureRect/menu/options" method="_on_pressed"]
+[connection signal="pressed" from="PanelContainer/MarginContainer2/VBoxContainer/TextureRect/menu/quit" to="PanelContainer/MarginContainer2/VBoxContainer/TextureRect/menu/quit" method="_on_pressed"]
+[connection signal="animation_finished" from="PanelContainer/MarginContainer2/VBoxContainer/TextureRect/start_animation" to="PanelContainer/MarginContainer2/VBoxContainer/TextureRect" method="_on_start_animation_animation_finished"]
 [connection signal="pressed" from="inventory/MarginContainer2/VBoxContainer/HBoxContainer/PanelContainer/Button" to="inventory/MarginContainer2/VBoxContainer/HBoxContainer/PanelContainer" method="_on_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/Panel/HBoxContainer/Panel2/Button" to="VBoxContainer/Panel/HBoxContainer/Panel2/Button" method="_on_pressed"]
 [connection signal="value_changed" from="VBoxContainer/Panel/HBoxContainer/Panel/HSlider" to="VBoxContainer/Panel/HBoxContainer/Panel/HSlider" method="_on_value_changed"]

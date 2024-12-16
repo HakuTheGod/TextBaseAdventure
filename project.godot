@@ -21,10 +21,15 @@ ContentData="*res://Scripts/content_data.gd"
 InventoryInside="*res://Scripts/inventory/inventory_inside.gd"
 PC="*res://Scripts/player.gd"
 Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
+TransitionScreen="*res://Scenes/transition_screen.tscn"
+GlobVar="*res://Scripts/globVar.gd"
 
 [dialogic]
 
-directories/dch_directory={}
+directories/dch_directory={
+"characterTemp": "res://Assets/Characters/characterTemp.dch",
+"charactermain": "res://Assets/Characters/charactermain.dch"
+}
 directories/dtl_directory={
 "Porolgue": "res://Story/Timelines/Demo/Prologue/Porolgue.dtl",
 "preview": "res://Story/Timelines/Demo/SettingPreview/preview.dtl"
@@ -50,7 +55,7 @@ save/autosave_delay=60.0
 save/encryption_on_exports_only=true
 text/autopauses={}
 glossary/default_case_sensitive=true
-layout/style_list=["res://Util/Styles/style 1.tres"]
+layout/style_list=["res://Util/Styles/style 1.tres", "res://Util/Styles/temp_style.tres"]
 layout/default_style="res://Util/Styles/style 1.tres"
 variables={}
 

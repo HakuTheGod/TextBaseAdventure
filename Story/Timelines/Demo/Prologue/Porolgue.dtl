@@ -1,0 +1,5 @@
+[background arg="res://Assets/CGs/AI_vn_backgrounds/vlack.jpg" fade="0.5"]
+[wait time="0.5"]
+charactermain: The game has started
+join characterTemp center [animation="Fade In" wait="true"]
+characterTemp: Hello traveller.

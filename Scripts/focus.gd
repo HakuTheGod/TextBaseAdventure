@@ -1,5 +1,5 @@
 extends VBoxContainer
-@onready var startbtn: Button = $start
+@onready var startbtn: Button = $quit2
 @onready var continueBtn: Button = $continue
 @onready var options: Button = $options
 @onready var extras: Button = $extras
@@ -10,9 +10,6 @@ extends VBoxContainer
 
 var focusedButton: int = 0
 
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	pass
 
 func _process(delta: float) -> void:
 	if not startbtn.has_focus() and focusedButton == 0:
@@ -69,18 +66,4 @@ func _process(delta: float) -> void:
 			options.release_focus()
 		if extras.has_focus():
 			extras.release_focus()
-	elif startbtn.is_hovered() and startbtn.has_focus():
-		focusedButton = 0
-		startbtn.release_focus()
-	elif continueBtn.is_hovered() and continueBtn.has_focus():
-		focusedButton = 0
-		continueBtn.release_focus()
-	elif options.is_hovered() and options.has_focus():
-		focusedButton = 0
-		options.release_focus()
-	elif extras.is_hovered() and extras.has_focus():
-		focusedButton = 0
-		options.release_focus()
-	elif quitBtn.is_hovered() and options.has_focus():
-		focusedButton = 0
-		quitBtn.release_focus()
+	
