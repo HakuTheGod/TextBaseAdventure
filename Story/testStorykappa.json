@@ -1,37 +1,26 @@
 {
 	"000_prologue": {
 		"title": "Prologue",
-		"narr-text": "pipi",
+		"speaker": "You",
+		"dialogue_line": "This is where the story starts.",
+		"next": "001_intro",
 	},
 	"001_intro": {
-		"title": "Chapter 1: A new journey!",
-		"narr-text": "pipi1",
-		"choices": {
-			"1": {
-				"text": "Continue",
-				"output": "002_outro"
-			},
-			"2": {
-				"text": "This story is BS!",
-				"output": "002_outro"
-			},
-			"3": {
-				"text": "Go back.",
-				"output": "001_intro"
-			}
-		},
-		"items_obtained": {
-			"1": {
-				"text": "Castle Key"
-			},
-			"2": {
-				"text": "BS Sword"
-			}
-		}
+		"title": "Prologue",
+		"speaker": "You",
+		"dialogue_line": "I wonder what would have happened if i did not decide to do this. If i just had stayed home.",
+		"next": "002_intro",
+	},
+	"002_intro": {
+		"title": "Prologue",
+		"speaker": "You",
+		"dialogue_line": "But I guess... i'm not in a position to wonder anymore.",
+		"next": "002_outro",
 	},
 	"002_outro": {
-		"title": "Chapter 2: The end.",
-		"narr-text": "pipi2",
+		"title": "Prologue",
+		"speaker": "You",
+		"dialogue_line": "The end",
 		"choices": {
 			"1": {
 				"text": "Quit",

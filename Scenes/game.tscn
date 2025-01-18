@@ -1,5 +1,6 @@
-[gd_scene load_steps=81 format=3 uid="uid://c8wxiu3coict0"]
+[gd_scene load_steps=82 format=3 uid="uid://c8wxiu3coict0"]
 
+[ext_resource type="Script" path="res://Scripts/game_init.gd" id="1_2oisx"]
 [ext_resource type="Script" path="res://Scripts/globVar.gd" id="1_igfnq"]
 [ext_resource type="Texture2D" uid="uid://cmua4d3ggcnn5" path="res://Assets/CGs/AI_vn_backgrounds/white.png" id="2_qd05o"]
 [ext_resource type="Texture2D" uid="uid://4r27iylo5178" path="res://Assets/CGs/45-454893_final-fantasy-x-logo-by-eldi13-on-deviantart-final-fantasy-x-background.png" id="3_s3yju"]
@@ -196,14 +197,6 @@ _data = {
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_btuh4"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vngwp"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4g4ns"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ugf30"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_h0p61"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ekwtd"]
 
@@ -494,12 +487,21 @@ corner_radius_bottom_left = 5
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_oo1wo"]
 bg_color = Color(0.72549, 0.968627, 0.843137, 1)
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vngwp"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4g4ns"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ugf30"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_h0p61"]
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ugvmu"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6e1w0"]
 bg_color = Color(0.878431, 0.419608, 0.643137, 1)
 
 [node name="Game" type="Node"]
+script = ExtResource("1_2oisx")
 
 [node name="PanelContainer" type="PanelContainer" parent="."]
 anchors_preset = 15
@@ -864,9 +866,9 @@ text = "[center]Skip Text[/center]"
 custom_minimum_size = Vector2(0, 40)
 layout_mode = 2
 offset_left = 13.75
-offset_top = 215.0
+offset_top = 216.25
 offset_right = 413.75
-offset_bottom = 255.0
+offset_bottom = 256.25
 size_flags_horizontal = 3
 size_flags_vertical = 0
 theme_override_colors/default_color = Color(0, 0, 0, 1)
@@ -876,7 +878,7 @@ theme_override_font_sizes/mono_font_size = 24
 theme_override_font_sizes/normal_font_size = 24
 theme_override_font_sizes/bold_font_size = 24
 bbcode_enabled = true
-text = "[center]H Scenes[/center]"
+text = "[center]Language[/center]"
 
 [node name="RichTextLabel5" type="RichTextLabel" parent="VBoxContainer/Panel/HBoxContainer/Panel2"]
 custom_minimum_size = Vector2(0, 40)
@@ -1108,26 +1110,6 @@ grow_horizontal = 2
 grow_vertical = 2
 max_value = 5.0
 
-[node name="Button" type="Button" parent="VBoxContainer/Panel/HBoxContainer/Panel"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -12.7501
-offset_top = -133.5
-offset_right = 7.24994
-offset_bottom = -113.5
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_styles/focus = SubResource("StyleBoxFlat_vngwp")
-theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_4g4ns")
-theme_override_styles/hover = SubResource("StyleBoxFlat_ugf30")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_h0p61")
-toggle_mode = true
-script = ExtResource("8_vtidb")
-
 [node name="Button2" type="Button" parent="VBoxContainer/Panel/HBoxContainer/Panel"]
 layout_mode = 1
 anchors_preset = 8
@@ -1179,6 +1161,34 @@ visible_ratio = 0.0
 libraries = {
 "": SubResource("AnimationLibrary_kqv3t")
 }
+
+[node name="OptionButton2" type="OptionButton" parent="VBoxContainer/Panel/HBoxContainer/Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -45.7501
+offset_top = -136.5
+offset_right = 41.2499
+offset_bottom = -105.5
+grow_horizontal = 2
+grow_vertical = 2
+selected = 0
+fit_to_longest_item = false
+item_count = 6
+popup/item_0/text = "English"
+popup/item_1/text = "Greek"
+popup/item_1/id = 1
+popup/item_2/text = "Japanese"
+popup/item_2/id = 2
+popup/item_3/text = "Ancient Greek"
+popup/item_3/id = 3
+popup/item_4/text = "Briish"
+popup/item_4/id = 4
+popup/item_5/text = "Clingon"
+popup/item_5/id = 5
 
 [node name="TextureRect2" type="TextureRect" parent="VBoxContainer/Panel/HBoxContainer"]
 custom_minimum_size = Vector2(150, 0)
@@ -1763,31 +1773,13 @@ theme_override_font_sizes/bold_font_size = 24
 bbcode_enabled = true
 text = "[center]Hide Text Sound During H Scenes[/center]"
 
-[node name="RichTextLabel9" type="RichTextLabel" parent="VBoxContainer3/Panel/HBoxContainer/Panel2"]
-custom_minimum_size = Vector2(0, 40)
-layout_mode = 2
-offset_left = 17.5
-offset_top = 405.0
-offset_right = 417.5
-offset_bottom = 445.0
-size_flags_horizontal = 3
-size_flags_vertical = 0
-theme_override_colors/default_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/bold_italics_font_size = 24
-theme_override_font_sizes/italics_font_size = 24
-theme_override_font_sizes/mono_font_size = 24
-theme_override_font_sizes/normal_font_size = 24
-theme_override_font_sizes/bold_font_size = 24
-bbcode_enabled = true
-text = "[center]Language Selection[/center]"
-
 [node name="RichTextLabel10" type="RichTextLabel" parent="VBoxContainer3/Panel/HBoxContainer/Panel2"]
 custom_minimum_size = Vector2(0, 40)
 layout_mode = 2
 offset_left = 17.5
-offset_top = 446.25
+offset_top = 411.25
 offset_right = 417.5
-offset_bottom = 486.25
+offset_bottom = 451.25
 size_flags_horizontal = 3
 size_flags_vertical = 0
 theme_override_colors/default_color = Color(0, 0, 0, 1)
@@ -1838,6 +1830,7 @@ offset_top = 105.0
 offset_right = -75.7501
 offset_bottom = 140.0
 grow_horizontal = 2
+value = 100.0
 
 [node name="HSlider2" type="HSlider" parent="VBoxContainer3/Panel/HBoxContainer/Panel"]
 layout_mode = 1
@@ -1851,6 +1844,7 @@ offset_right = -75.7501
 offset_bottom = -172.25
 grow_horizontal = 2
 grow_vertical = 2
+value = 100.0
 
 [node name="HSlider3" type="HSlider" parent="VBoxContainer3/Panel/HBoxContainer/Panel"]
 layout_mode = 1
@@ -1864,6 +1858,7 @@ offset_right = -74.5001
 offset_bottom = -137.25
 grow_horizontal = 2
 grow_vertical = 2
+value = 100.0
 
 [node name="HSlider5" type="HSlider" parent="VBoxContainer3/Panel/HBoxContainer/Panel"]
 layout_mode = 1
@@ -1885,9 +1880,9 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -12.7501
+offset_left = -11.5001
 offset_top = -134.75
-offset_right = 7.24994
+offset_right = 8.49991
 offset_bottom = -114.75
 grow_horizontal = 2
 grow_vertical = 2
@@ -1946,9 +1941,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -9.00006
-offset_top = 104.0
+offset_top = 56.5001
 offset_right = 10.9999
-offset_bottom = 124.0
+offset_bottom = 76.5001
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/focus = SubResource("StyleBoxFlat_ekwtd")
@@ -1992,34 +1987,6 @@ popup/item_8/text = "Option 9"
 popup/item_8/id = 8
 popup/item_9/text = "Option 10"
 popup/item_9/id = 9
-
-[node name="OptionButton2" type="OptionButton" parent="VBoxContainer3/Panel/HBoxContainer/Panel"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -43.5
-offset_top = 58.2501
-offset_right = 43.5
-offset_bottom = 89.2501
-grow_horizontal = 2
-grow_vertical = 2
-selected = 0
-fit_to_longest_item = false
-item_count = 6
-popup/item_0/text = "English"
-popup/item_1/text = "Greek"
-popup/item_1/id = 1
-popup/item_2/text = "Japanese"
-popup/item_2/id = 2
-popup/item_3/text = "Ancient Greek"
-popup/item_3/id = 3
-popup/item_4/text = "Briish"
-popup/item_4/id = 4
-popup/item_5/text = "Clingon"
-popup/item_5/id = 5
 
 [node name="TextureRect2" type="TextureRect" parent="VBoxContainer3/Panel/HBoxContainer"]
 custom_minimum_size = Vector2(150, 0)
@@ -2232,7 +2199,6 @@ text = "Contols"
 [connection signal="pressed" from="VBoxContainer/Panel/HBoxContainer/Panel2/Button" to="VBoxContainer/Panel/HBoxContainer/Panel2/Button" method="_on_pressed"]
 [connection signal="value_changed" from="VBoxContainer/Panel/HBoxContainer/Panel/HSlider" to="VBoxContainer/Panel/HBoxContainer/Panel/HSlider" method="_on_value_changed"]
 [connection signal="value_changed" from="VBoxContainer/Panel/HBoxContainer/Panel/HSlider2" to="VBoxContainer/Panel/HBoxContainer/Panel/HSlider2" method="_on_value_changed"]
-[connection signal="toggled" from="VBoxContainer/Panel/HBoxContainer/Panel/Button" to="VBoxContainer/Panel/HBoxContainer/Panel/Button" method="_on_toggled"]
 [connection signal="toggled" from="VBoxContainer/Panel/HBoxContainer/Panel/Button2" to="VBoxContainer/Panel/HBoxContainer/Panel/Button2" method="_on_toggled"]
 [connection signal="pressed" from="VBoxContainer/Panel/HBoxContainer/TextureRect2/Button2" to="VBoxContainer/Panel/HBoxContainer/TextureRect2/Button2" method="_on_pressed"]
 [connection signal="pressed" from="VBoxContainer/Panel/HBoxContainer/TextureRect2/Button3" to="VBoxContainer/Panel/HBoxContainer/TextureRect2/Button3" method="_on_pressed"]

@@ -24,7 +24,7 @@ func _ready() -> void:
 	start_label.visible = true
 	menu.visible = false
 	start_animation.play("fade_start")
-	start_animation.connect("animation_finished", Callable(self, "_on_start_animation_animation_finished"))
+	#start_animation.connect("animation_finished", Callable(self, "_on_start_animation_animation_finished"))
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
