@@ -1,8 +1,9 @@
-[gd_scene load_steps=15 format=3 uid="uid://ucvqhehjbado"]
+[gd_scene load_steps=16 format=3 uid="uid://ucvqhehjbado"]
 
 [ext_resource type="Script" path="res://Scripts/Dialogue/dialogue.gd" id="1_u3hyn"]
 [ext_resource type="Texture2D" uid="uid://bhk2vq1q2gi02" path="res://Assets/CGs/AI_vn_backgrounds/vlack.jpg" id="2_la2cu"]
 [ext_resource type="Texture2D" uid="uid://cmua4d3ggcnn5" path="res://Assets/CGs/AI_vn_backgrounds/white.png" id="3_c8snw"]
+[ext_resource type="Texture2D" uid="uid://682ami8hhi7q" path="res://Assets/tia_blush.png" id="3_q27xt"]
 [ext_resource type="Texture2D" uid="uid://cpsmrp55x6l6f" path="res://Assets/istockphoto-654922866-612x612.jpg" id="4_h5ol8"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ip5q0"]
@@ -159,6 +160,11 @@ size_flags_vertical = 3
 texture = ExtResource("2_la2cu")
 expand_mode = 2
 
+[node name="Sprite2D" type="Sprite2D" parent="PanelContainer2/MarginContainer2/VBoxContainer/TextureRect"]
+position = Vector2(663, 415)
+scale = Vector2(0.656771, 0.561914)
+texture = ExtResource("3_q27xt")
+
 [node name="Panel" type="Panel" parent="PanelContainer2/MarginContainer2/VBoxContainer/TextureRect"]
 z_index = 1
 layout_mode = 1
@@ -205,7 +211,7 @@ expand_mode = 2
 
 [node name="TextureRect2" type="Panel" parent="PanelContainer2/MarginContainer2/VBoxContainer/TextureRect"]
 clip_children = 1
-z_index = 1
+z_index = 2
 clip_contents = true
 layout_mode = 0
 offset_left = 224.0
@@ -257,6 +263,7 @@ text = "[center]You[/center]"
 scroll_active = false
 
 [node name="Panel2" type="Panel" parent="PanelContainer2/MarginContainer2/VBoxContainer/TextureRect"]
+z_index = 1
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.5

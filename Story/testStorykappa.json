@@ -1,23 +1,25 @@
 {
-	"000_prologue": {
+	"Scene1_0": {
 		"title": "Prologue",
 		"speaker": "You",
+		"sprite": "tia_angry",
 		"dialogue_line": "This is where the story starts.",
 		"next": "001_intro",
 	},
-	"001_intro": {
+	"Scene1_1": {
 		"title": "Prologue",
 		"speaker": "You",
+		"sprite": "tia_happy",
 		"dialogue_line": "I wonder what would have happened if i did not decide to do this. If i just had stayed home.",
 		"next": "002_intro",
 	},
-	"002_intro": {
+	"Scene1_2": {
 		"title": "Prologue",
 		"speaker": "You",
 		"dialogue_line": "But I guess... i'm not in a position to wonder anymore.",
 		"next": "002_outro",
 	},
-	"002_outro": {
+	"Scene1_3": {
 		"title": "Prologue",
 		"speaker": "You",
 		"dialogue_line": "The end",

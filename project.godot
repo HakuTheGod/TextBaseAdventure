@@ -24,6 +24,7 @@ TransitionScreen="*res://Scenes/transition_screen.tscn"
 GlobVar="*res://Scripts/globVar.gd"
 ContentData="*res://Scripts/game_init.gd"
 GeneralOptions="*res://Scripts/general_options.gd"
+GlobalUtil="*res://Scripts/global_util.gd"
 
 [dialogic]
 

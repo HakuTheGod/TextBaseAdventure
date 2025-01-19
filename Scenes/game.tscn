@@ -1,6 +1,5 @@
-[gd_scene load_steps=82 format=3 uid="uid://c8wxiu3coict0"]
+[gd_scene load_steps=81 format=3 uid="uid://c8wxiu3coict0"]
 
-[ext_resource type="Script" path="res://Scripts/game_init.gd" id="1_2oisx"]
 [ext_resource type="Script" path="res://Scripts/globVar.gd" id="1_igfnq"]
 [ext_resource type="Texture2D" uid="uid://cmua4d3ggcnn5" path="res://Assets/CGs/AI_vn_backgrounds/white.png" id="2_qd05o"]
 [ext_resource type="Texture2D" uid="uid://4r27iylo5178" path="res://Assets/CGs/45-454893_final-fantasy-x-logo-by-eldi13-on-deviantart-final-fantasy-x-background.png" id="3_s3yju"]
@@ -501,7 +500,6 @@ bg_color = Color(0.72549, 0.968627, 0.843137, 1)
 bg_color = Color(0.878431, 0.419608, 0.643137, 1)
 
 [node name="Game" type="Node"]
-script = ExtResource("1_2oisx")
 
 [node name="PanelContainer" type="PanelContainer" parent="."]
 anchors_preset = 15
