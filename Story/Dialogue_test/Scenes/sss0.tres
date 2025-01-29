@@ -1,0 +1,21 @@
+[gd_resource type="Resource" script_class="VNActions" load_steps=5 format=3 uid="uid://c8508o0qix2wu"]
+
+[ext_resource type="Script" path="res://Story/Dialogue_test/vn_dialogue_line.gd" id="1_2ave0"]
+[ext_resource type="Script" path="res://Story/Dialogue_test/vn_actions.gd" id="2_syotn"]
+
+[sub_resource type="Resource" id="Resource_xldpb"]
+script = ExtResource("1_2ave0")
+text_id = "ko"
+speaker = ""
+expression = ""
+
+[sub_resource type="Resource" id="Resource_6bmmt"]
+script = ExtResource("1_2ave0")
+text_id = "lk"
+speaker = ""
+expression = ""
+
+[resource]
+script = ExtResource("2_syotn")
+code = "kapa"
+actions = Array[Resource]([SubResource("Resource_xldpb"), SubResource("Resource_6bmmt")])

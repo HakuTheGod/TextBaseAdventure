@@ -12,19 +12,19 @@ config_version=5
 
 config/name="TextBaseAdventure"
 run/main_scene="res://Scenes/game.tscn"
-config/features=PackedStringArray("4.3", "Forward Plus")
+config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
 
 [autoload]
 
 InventoryInside="*res://Scripts/inventory/inventory_inside.gd"
 PC="*res://Scripts/player.gd"
-Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
 TransitionScreen="*res://Scenes/transition_screen.tscn"
 GlobVar="*res://Scripts/globVar.gd"
 ContentData="*res://Scripts/game_init.gd"
 GeneralOptions="*res://Scripts/general_options.gd"
 GlobalUtil="*res://Scripts/global_util.gd"
+Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
 
 [dialogic]
 
@@ -34,7 +34,8 @@ directories/dch_directory={
 }
 directories/dtl_directory={
 "Porolgue": "res://Story/Timelines/Demo/Prologue/Porolgue.dtl",
-"preview": "res://Story/Timelines/Demo/SettingPreview/preview.dtl"
+"preview": "res://Story/Timelines/Demo/SettingPreview/preview.dtl",
+"timeline": "res://addons/dialogic/Example Assets/timeline.dtl"
 }
 extensions_folder="res://addons/dialogic_additions"
 text/letter_speed=0.01
