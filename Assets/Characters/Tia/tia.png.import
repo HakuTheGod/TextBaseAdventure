@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://jjir38o7sv2s"
-path="res://.godot/imported/tia.png-648160cda522db9abfda17756398a6f7.ctex"
+path="res://.godot/imported/tia.png-6332e05c3de5c75eaaed6075dd7dbf7e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/tia.png"
-dest_files=["res://.godot/imported/tia.png-648160cda522db9abfda17756398a6f7.ctex"]
+source_file="res://Assets/Characters/Tia/tia.png"
+dest_files=["res://.godot/imported/tia.png-6332e05c3de5c75eaaed6075dd7dbf7e.ctex"]
 
 [params]
 

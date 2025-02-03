@@ -1,201 +1,9 @@
-[gd_scene load_steps=27 format=3 uid="uid://ucvqhehjbado"]
+[gd_scene load_steps=15 format=3 uid="uid://ucvqhehjbado"]
 
 [ext_resource type="Script" path="res://Scripts/Dialogue/dialogue.gd" id="1_u3hyn"]
 [ext_resource type="Texture2D" uid="uid://bhk2vq1q2gi02" path="res://Assets/CGs/AI_vn_backgrounds/vlack.jpg" id="2_la2cu"]
 [ext_resource type="Texture2D" uid="uid://cmua4d3ggcnn5" path="res://Assets/CGs/AI_vn_backgrounds/white.png" id="3_c8snw"]
-[ext_resource type="Texture2D" uid="uid://682ami8hhi7q" path="res://Assets/tia_blush.png" id="3_q27xt"]
-[ext_resource type="Texture2D" uid="uid://jjir38o7sv2s" path="res://Assets/tia.png" id="3_w77n7"]
 [ext_resource type="Texture2D" uid="uid://cpsmrp55x6l6f" path="res://Assets/istockphoto-654922866-612x612.jpg" id="4_h5ol8"]
-
-[sub_resource type="Animation" id="Animation_fqnwm"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("character1:modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 0)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("character2:modulate")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 0)]
-}
-
-[sub_resource type="Animation" id="Animation_2na0a"]
-resource_name = "fade_in"
-length = 2.0
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("character1:modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 2),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
-}
-
-[sub_resource type="Animation" id="Animation_4g4lg"]
-resource_name = "fade_in_2"
-length = 2.0
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("character2:modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 2),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
-}
-
-[sub_resource type="Animation" id="Animation_wdoq4"]
-resource_name = "fade_in_2_instant"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("character2:modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 1)]
-}
-
-[sub_resource type="Animation" id="Animation_k7qdp"]
-resource_name = "fade_in_M_R"
-length = 2.0
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("character1:modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 2),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("character2:modulate")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 2),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
-}
-
-[sub_resource type="Animation" id="Animation_82t7y"]
-resource_name = "fade_in_M_R_instant"
-length = 2.0
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("character1:modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 1)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("character2:modulate")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 1)]
-}
-
-[sub_resource type="Animation" id="Animation_4cvdf"]
-resource_name = "fade_in_instant"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("character1:modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 1)]
-}
-
-[sub_resource type="Animation" id="Animation_i3f38"]
-resource_name = "fade_out"
-length = 2.0
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("character1:modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 2),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
-}
-
-[sub_resource type="Animation" id="Animation_wtp43"]
-resource_name = "fade_out_2"
-length = 2.0
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("character2:modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 2),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_yg21g"]
-_data = {
-"RESET": SubResource("Animation_fqnwm"),
-"fade_in": SubResource("Animation_2na0a"),
-"fade_in_2": SubResource("Animation_4g4lg"),
-"fade_in_2_instant": SubResource("Animation_wdoq4"),
-"fade_in_M_R": SubResource("Animation_k7qdp"),
-"fade_in_M_R_instant": SubResource("Animation_82t7y"),
-"fade_in_instant": SubResource("Animation_4cvdf"),
-"fade_out": SubResource("Animation_i3f38"),
-"fade_out_2": SubResource("Animation_wtp43")
-}
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ip5q0"]
 bg_color = Color(0, 0, 0, 0.498039)
@@ -351,42 +159,26 @@ size_flags_vertical = 3
 texture = ExtResource("2_la2cu")
 expand_mode = 2
 
-[node name="character5" type="Sprite2D" parent="PanelContainer2/MarginContainer2/VBoxContainer/TextureRect"]
+[node name="characters" type="Node2D" parent="PanelContainer2/MarginContainer2/VBoxContainer/TextureRect"]
+
+[node name="sprite_3" type="Marker2D" parent="PanelContainer2/MarginContainer2/VBoxContainer/TextureRect"]
+position = Vector2(693, 466)
+
+[node name="sprite_4" type="Marker2D" parent="PanelContainer2/MarginContainer2/VBoxContainer/TextureRect"]
 visible = false
-position = Vector2(1214, 447)
-scale = Vector2(0.526, 0.5)
-texture = ExtResource("3_w77n7")
+position = Vector2(951, 466)
 
-[node name="character4" type="Sprite2D" parent="PanelContainer2/MarginContainer2/VBoxContainer/TextureRect"]
+[node name="sprite_2" type="Marker2D" parent="PanelContainer2/MarginContainer2/VBoxContainer/TextureRect"]
 visible = false
-position = Vector2(153, 449)
-scale = Vector2(0.56, 0.5)
-texture = ExtResource("3_w77n7")
+position = Vector2(426, 466)
 
-[node name="character3" type="Sprite2D" parent="PanelContainer2/MarginContainer2/VBoxContainer/TextureRect"]
+[node name="sprite_1" type="Marker2D" parent="PanelContainer2/MarginContainer2/VBoxContainer/TextureRect"]
 visible = false
-position = Vector2(426, 446)
-scale = Vector2(0.56, 0.505)
-texture = ExtResource("3_w77n7")
+position = Vector2(153, 466)
 
-[node name="character2" type="Sprite2D" parent="PanelContainer2/MarginContainer2/VBoxContainer/TextureRect"]
+[node name="sprite_5" type="Marker2D" parent="PanelContainer2/MarginContainer2/VBoxContainer/TextureRect"]
 visible = false
-modulate = Color(1, 1, 1, 0)
-position = Vector2(951, 446)
-scale = Vector2(0.526, 0.5)
-texture = ExtResource("3_w77n7")
-
-[node name="character1" type="Sprite2D" parent="PanelContainer2/MarginContainer2/VBoxContainer/TextureRect"]
-modulate = Color(1, 1, 1, 0)
-position = Vector2(693, 444.844)
-scale = Vector2(0.56033, 0.506494)
-texture = ExtResource("3_q27xt")
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="PanelContainer2/MarginContainer2/VBoxContainer/TextureRect/character1"]
-root_node = NodePath("../..")
-libraries = {
-"": SubResource("AnimationLibrary_yg21g")
-}
+position = Vector2(1214, 466)
 
 [node name="Panel" type="Panel" parent="PanelContainer2/MarginContainer2/VBoxContainer/TextureRect"]
 z_index = 1
@@ -521,9 +313,6 @@ theme_override_font_sizes/mono_font_size = 16
 theme_override_font_sizes/normal_font_size = 16
 theme_override_font_sizes/bold_font_size = 16
 bbcode_enabled = true
-text = "
-
-[center]This is the start of the game[/center]"
 visible_characters = 0
 visible_ratio = 0.0
 

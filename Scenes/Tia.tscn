@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://b16n383xb0xge"]
 
 [ext_resource type="PackedScene" uid="uid://blh7g6tow7fst" path="res://Scenes/character.tscn" id="1_j4pk5"]
-[ext_resource type="Texture2D" uid="uid://682ami8hhi7q" path="res://Assets/tia_blush.png" id="2_o1hjj"]
+[ext_resource type="Texture2D" uid="uid://682ami8hhi7q" path="res://Assets/Characters/Tia/tia_blush.png" id="2_o1hjj"]
 
 [node name="Node2D" instance=ExtResource("1_j4pk5")]
 

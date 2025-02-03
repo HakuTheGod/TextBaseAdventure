@@ -1,5 +1,7 @@
 extends Node
 
+signal on_line_finished
+
 @export var content_dict: Dictionary = {}
 @onready var speaker: RichTextLabel
 @onready var dialogue_line: RichTextLabel
@@ -16,10 +18,6 @@ var instant_anim: int
 
 var actions: VNActions
 
-const CHARACTER_EXPRESSIONS = {
-	"tia" = preload("res://Assets/tia.png"),
-	"tia_blush" = preload("res://Assets/tia_blush.png")
-}
 
 #---------------SETTERS---------------
 
@@ -49,6 +47,7 @@ func set_dialog_line(dl: RichTextLabel):
 
 func set_text_animation(ta: AnimationPlayer):
 	text_animation = ta
+	text_animation.animation_finished.connect(on_text_animation_finished)
 
 func set_sprite_animation(sa: AnimationPlayer):
 	sprite_animation_player = sa
@@ -65,9 +64,9 @@ func set_texture_for_sprite(sprite: Sprite2D, texture: String) -> void:
 	if sprite.visible == false:
 		sprite.visible = true
 	if texture == "tia":
-		sprite.texture = CHARACTER_EXPRESSIONS.tia
+		sprite.texture = sprite.EXPRESSIONS.normal
 	elif texture == "tia_blush":
-		sprite.texture = CHARACTER_EXPRESSIONS.tia_blush
+		sprite.texture = sprite.EXPRESSIONS.blush
 
 #---------------GETTERS-----------------
 
@@ -188,6 +187,8 @@ func display_sprites(output_value) -> void:
 		change_sprite_animation(mass_sprite_animation)
 		
 		
+func on_text_animation_finished(animation_name):
+	on_line_finished.emit()
 
 
 func display_speaker(output_value) -> void:
@@ -225,7 +226,7 @@ func vn_input_handler(current_page) -> void:
 		change_text_animation("text_speed_instant")
 		#change_sprite_animation(current_animation + "_instant")
 	else:
-		sprites_invisible()
+		#sprites_invisible()
 		set_line_content(current_page)
 
 func change_sprite_animation(animation_name) -> void: 
