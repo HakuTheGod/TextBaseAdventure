@@ -1,7 +1,15 @@
-[gd_resource type="Resource" script_class="VNActions" load_steps=8 format=3 uid="uid://c8508o0qix2wu"]
+[gd_resource type="Resource" script_class="VNActions" load_steps=14 format=3 uid="uid://c8508o0qix2wu"]
 
 [ext_resource type="Script" path="res://Story/Dialogue_test/vn_dialogue_line.gd" id="1_2ave0"]
+[ext_resource type="Script" path="res://Story/Dialogue_test/vn_line_characters.gd" id="1_mp3wn"]
 [ext_resource type="Script" path="res://Story/Dialogue_test/vn_actions.gd" id="2_syotn"]
+
+[sub_resource type="Resource" id="Resource_xpmya"]
+script = ExtResource("1_mp3wn")
+expression = ""
+character_name = ""
+animation = ""
+position = 0
 
 [sub_resource type="Resource" id="Resource_8is3x"]
 script = ExtResource("1_2ave0")
@@ -9,11 +17,25 @@ text_id = ""
 speaker = ""
 expression = ""
 
+[sub_resource type="Resource" id="Resource_chpig"]
+script = ExtResource("1_mp3wn")
+expression = ""
+character_name = ""
+animation = ""
+position = 0
+
 [sub_resource type="Resource" id="Resource_3avmd"]
 script = ExtResource("1_2ave0")
 text_id = ""
 speaker = ""
 expression = ""
+
+[sub_resource type="Resource" id="Resource_hlnhj"]
+script = ExtResource("1_mp3wn")
+expression = ""
+character_name = ""
+animation = ""
+position = 0
 
 [sub_resource type="Resource" id="Resource_qac3a"]
 script = ExtResource("1_2ave0")
@@ -21,11 +43,25 @@ text_id = ""
 speaker = ""
 expression = ""
 
+[sub_resource type="Resource" id="Resource_jsvwn"]
+script = ExtResource("1_mp3wn")
+expression = ""
+character_name = ""
+animation = ""
+position = 0
+
 [sub_resource type="Resource" id="Resource_udknc"]
 script = ExtResource("1_2ave0")
 text_id = ""
 speaker = ""
 expression = ""
+
+[sub_resource type="Resource" id="Resource_dbr6t"]
+script = ExtResource("1_mp3wn")
+expression = ""
+character_name = ""
+animation = ""
+position = 0
 
 [sub_resource type="Resource" id="Resource_3qxvn"]
 script = ExtResource("1_2ave0")
@@ -36,4 +72,4 @@ expression = ""
 [resource]
 script = ExtResource("2_syotn")
 code = "kapa"
-actions = Array[Resource]([SubResource("Resource_8is3x"), SubResource("Resource_3avmd"), SubResource("Resource_qac3a"), SubResource("Resource_udknc"), SubResource("Resource_3qxvn")])
+actions = Array[Resource]([SubResource("Resource_xpmya"), SubResource("Resource_8is3x"), SubResource("Resource_chpig"), SubResource("Resource_3avmd"), SubResource("Resource_hlnhj"), SubResource("Resource_qac3a"), SubResource("Resource_jsvwn"), SubResource("Resource_udknc"), SubResource("Resource_dbr6t"), SubResource("Resource_3qxvn")])

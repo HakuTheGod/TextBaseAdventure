@@ -7,6 +7,8 @@ const EXPRESSIONS = {
 	"blush" = preload("res://Assets/Characters/Tia/tia_blush.png")
 }
 
+@export var character_name: String = "Tia"
+
 var sprite_2d: Sprite2D
 
 var animation_player: AnimationPlayer
