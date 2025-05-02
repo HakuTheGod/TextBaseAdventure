@@ -1,6 +1,6 @@
 [gd_scene load_steps=15 format=3 uid="uid://ucvqhehjbado"]
 
-[ext_resource type="Script" path="res://Scripts/Dialogue/dialogue.gd" id="1_u3hyn"]
+[ext_resource type="Script" uid="uid://3r3486t7jea6" path="res://Scripts/Dialogue/dialogue.gd" id="1_u3hyn"]
 [ext_resource type="Texture2D" uid="uid://bhk2vq1q2gi02" path="res://Assets/CGs/AI_vn_backgrounds/vlack.jpg" id="2_la2cu"]
 [ext_resource type="Texture2D" uid="uid://cmua4d3ggcnn5" path="res://Assets/CGs/AI_vn_backgrounds/white.png" id="3_c8snw"]
 [ext_resource type="Texture2D" uid="uid://cpsmrp55x6l6f" path="res://Assets/istockphoto-654922866-612x612.jpg" id="4_h5ol8"]
@@ -119,11 +119,11 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_yklel"]
 _data = {
-"RESET": SubResource("Animation_jg3km"),
-"text_speed": SubResource("Animation_4ewer"),
-"text_speed_instant": SubResource("Animation_ys2sn"),
-"text_speed_x2": SubResource("Animation_5pun7"),
-"text_speed_x3": SubResource("Animation_57wa6")
+&"RESET": SubResource("Animation_jg3km"),
+&"text_speed": SubResource("Animation_4ewer"),
+&"text_speed_instant": SubResource("Animation_ys2sn"),
+&"text_speed_x2": SubResource("Animation_5pun7"),
+&"text_speed_x3": SubResource("Animation_57wa6")
 }
 
 [node name="dialogUI" type="Control"]
@@ -318,7 +318,7 @@ visible_ratio = 0.0
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="PanelContainer2/MarginContainer2/VBoxContainer/TextureRect/Panel2"]
 libraries = {
-"": SubResource("AnimationLibrary_yklel")
+&"": SubResource("AnimationLibrary_yklel")
 }
 
 [node name="Panel" type="Panel" parent="PanelContainer2"]

@@ -14,6 +14,10 @@ const  characters_scripts_folder = "res://Scripts/Characters/"
 @export var namu: String
 const CHARACTER = preload("res://Scenes/character.tscn")
 const dialogue = preload("res://Story/Dialogue_test/Scenes/sss0.tres")
+var input_enabled := true
+var is_animating := false
+var full_text_shown := false
+
 
 var index
 var current_page: int
@@ -39,24 +43,32 @@ func _process(delta: float) -> void:
 	pass
 	
 func _input(event: InputEvent) -> void:
+	if !input_enabled or is_animating:
+		return
+
 	if event.is_action_pressed("next_line"):
 		if dialogue_line.visible_ratio < 1:
 			change_text_animation("text_speed_instant")
+			full_text_shown = true
 		else:
-			if dialogue_line.visible_ratio == 1:
-				if current_page != actionArray.actions.size()-1:
-					current_page = current_page+1
-					set_line_content(actionArray.actions[current_page])
-				else:
-					get_tree().quit()
-		#await GlobalUtil.on_line_finished
-		#character_1.play_animation("fade_out_test")
-		#await character_1.on_sprite_animation_finished
+			if current_page < actionArray.actions.size() - 1:
+				current_page += 1
+				set_line_content(actionArray.actions[current_page])
+			else:
+				get_tree().quit()
 
 func set_line_content(output_value) -> void:
+	input_enabled = false
+	is_animating = true
+	full_text_shown = false
+	
+	await display_sprites(output_value)
+
 	display_speaker(output_value)
 	display_dialogue_line(output_value)
-	display_sprites(output_value)
+
+	is_animating = false
+	input_enabled = true
 	
 func display_speaker(output_value) -> void:
 	if output_value is not VNDialogueLine:
@@ -107,10 +119,11 @@ func display_sprites(output_value) ->void:
 		await character.on_sprite_animation_finished
 	if output_value.animation == "fade_out":
 		character.queue_free()
-	if current_page+1 < actionArray.actions.size():
-		if actionArray.actions[current_page+1] is VNDialogueLine:
-			current_page = current_page + 1
-			set_line_content(actionArray.actions[current_page])
+	# -----The following line is in case we implement an auto advance feature----
+	#if output_value is VNDialogueLine and output_value.get("auto_advance", false):
+		#await get_tree().create_timer(0.5).timeout
+		#current_page += 1
+		#set_line_content(actionArray.actions[current_page])
 
 func get_marker_from_pos(pos: int) -> Marker2D:
 	if pos == 1:

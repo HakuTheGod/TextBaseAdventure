@@ -28,7 +28,8 @@ func set_sprite() -> void:
 
 func set_sprite_animation_player() -> void:
 	animation_player = $AnimationPlayer
-	animation_player.animation_finished.connect(_on_character_animation_finished)
+	if not animation_player.is_connected("animation_finished", _on_character_animation_finished):
+		animation_player.animation_finished.connect(_on_character_animation_finished)
 
 func set_sprite_position(pos: Vector2) -> void:
 	sprite_2d.position = pos
@@ -41,3 +42,4 @@ func play_animation(animation_name: String) -> void:
 
 func _on_character_animation_finished(animation_name):
 	on_sprite_animation_finished.emit()
+	return 1
