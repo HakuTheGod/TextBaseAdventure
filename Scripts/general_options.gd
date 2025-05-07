@@ -1,8 +1,10 @@
 extends VBoxContainer
 @export var text_speed = 0.0
-@export var dbopacity = 1.0
+@export var dialog_box_opacity = 1.0
 @export var text_animation = "Text_speed_slow"
 @export var text_outline_size = 0
+
+
 
 var Dialog_speed = text_speed
 

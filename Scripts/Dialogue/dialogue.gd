@@ -12,7 +12,7 @@ extends PanelContainer
 const  characters_scripts_folder = "res://Scripts/Characters/"
 @export var actionArray: VNActions
 @export var namu: String
-const CHARACTER = preload("res://Scenes/character.tscn")
+const CHARACTER = preload("res://Scenes/vn/character.tscn")
 const dialogue = preload("res://Story/Dialogue_test/Scenes/sss0.tres")
 var input_enabled := true
 var is_animating := false

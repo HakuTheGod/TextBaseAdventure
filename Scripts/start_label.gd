@@ -6,10 +6,10 @@ extends TextureRect
 
 @onready var start_label: RichTextLabel = $start_label
 
-@onready var general: VBoxContainer = $"../../../../VBoxContainer"
-@onready var display: VBoxContainer = $"../../../../VBoxContainer2"
-@onready var audio: VBoxContainer = $"../../../../VBoxContainer3"
-@onready var controls: VBoxContainer = $"../../../../VBoxContainer4"
+@onready var general: VBoxContainer = $"../../../../Settings/VBoxContainer"
+@onready var display: VBoxContainer = $"../../../../Settings/VBoxContainer2"
+@onready var audio: VBoxContainer = $"../../../../Settings/VBoxContainer3"
+@onready var controls: VBoxContainer = $"../../../../Settings/VBoxContainer4"
 @onready var blur: Panel = $"../../../Panel"
 @onready var options: Button = $menu/options
 @onready var startBtn: Button = $menu/quit2
