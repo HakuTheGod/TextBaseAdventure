@@ -311,6 +311,13 @@ libraries = {
 &"": SubResource("AnimationLibrary_7ydfx")
 }
 
+[node name="Panel" type="Panel" parent="MarginContainer2"]
+visible = false
+z_index = 1
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
 [connection signal="pressed" from="MarginContainer2/VBoxContainer/TextureRect/menu/quit2" to="MarginContainer2/VBoxContainer/TextureRect/menu/quit2" method="_on_pressed"]
 [connection signal="mouse_entered" from="MarginContainer2/VBoxContainer/TextureRect/menu/options" to="MarginContainer2/VBoxContainer/TextureRect/menu/options" method="_on_mouse_entered"]
 [connection signal="pressed" from="MarginContainer2/VBoxContainer/TextureRect/menu/options" to="MarginContainer2/VBoxContainer/TextureRect/menu/options" method="_on_pressed"]

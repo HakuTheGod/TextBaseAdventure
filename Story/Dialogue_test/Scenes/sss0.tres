@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="VNActions" load_steps=14 format=3 uid="uid://c8508o0qix2wu"]
 
 [ext_resource type="Script" uid="uid://48msogdk30ee" path="res://Story/Dialogue_test/vn_dialogue_line.gd" id="1_2ave0"]
-[ext_resource type="Script" uid="uid://y2lc1mmelgfq" path="res://Story/Dialogue_test/vn_line_characters.gd" id="1_mp3wn"]
+[ext_resource type="Script" uid="uid://bhl40vnypsf4d" path="res://Story/Dialogue_test/vn_line_characters.gd" id="1_mp3wn"]
 [ext_resource type="Script" uid="uid://fc1u6e6tegbc" path="res://Story/Dialogue_test/vn_actions.gd" id="2_syotn"]
 
 [sub_resource type="Resource" id="Resource_xpmya"]
@@ -56,6 +56,12 @@ text_id = ""
 speaker = ""
 expression = ""
 
+[sub_resource type="Resource" id="Resource_3qxvn"]
+script = ExtResource("1_2ave0")
+text_id = ""
+speaker = ""
+expression = ""
+
 [sub_resource type="Resource" id="Resource_dbr6t"]
 script = ExtResource("1_mp3wn")
 expression = ""
@@ -63,13 +69,7 @@ character_name = ""
 animation = ""
 position = 0
 
-[sub_resource type="Resource" id="Resource_3qxvn"]
-script = ExtResource("1_2ave0")
-text_id = ""
-speaker = ""
-expression = ""
-
 [resource]
 script = ExtResource("2_syotn")
 code = "kapa"
-actions = Array[Resource]([SubResource("Resource_xpmya"), SubResource("Resource_8is3x"), SubResource("Resource_chpig"), SubResource("Resource_3avmd"), SubResource("Resource_hlnhj"), SubResource("Resource_qac3a"), SubResource("Resource_jsvwn"), SubResource("Resource_udknc"), SubResource("Resource_dbr6t"), SubResource("Resource_3qxvn")])
+actions = Array[Resource]([SubResource("Resource_xpmya"), SubResource("Resource_8is3x"), SubResource("Resource_chpig"), SubResource("Resource_3avmd"), SubResource("Resource_hlnhj"), SubResource("Resource_qac3a"), SubResource("Resource_jsvwn"), SubResource("Resource_udknc"), SubResource("Resource_3qxvn"), SubResource("Resource_dbr6t")])
