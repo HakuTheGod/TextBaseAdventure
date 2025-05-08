@@ -31,14 +31,13 @@ var full_text_shown := false
 @onready var user_prefs: UserPrefs
 
 var index
-var current_page: int
 
 
 func _ready() -> void:
 	user_prefs = UserPrefs.load_or_create()
 	var text_speed =  user_prefs.text_speed
 	print("start")
-	actionArray = dialogue
+	#actionArray = dialogue
 	dialogue_line.focus_mode = Control.FOCUS_NONE
 	actionArray = DIALOGUE
 	actionArray.pi()
@@ -86,7 +85,7 @@ func display_dialogue_line(output_value) -> void:
 
 
 func play_text_animation() -> void:
-	match GeneralOptions.text_speed:
+	match user_prefs.text_speed:
 		0.0: text_animation.play("text_speed")
 		1.0: text_animation.play("text_speed_x2")
 		2.0: text_animation.play("text_speed_x3")

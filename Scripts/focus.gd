@@ -11,7 +11,7 @@ extends VBoxContainer
 var focusedButton: int = 0
 
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if not startbtn.has_focus() and focusedButton == 0:
 		if Input.is_key_pressed(KEY_UP) or Input.is_key_pressed(KEY_DOWN) and focusedButton == 0:
 			startbtn.grab_focus()

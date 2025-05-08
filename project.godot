@@ -17,11 +17,8 @@ config/icon="res://icon.svg"
 
 [autoload]
 
-InventoryInside="*res://Scripts/inventory/inventory_inside.gd"
 TransitionScreen="*res://Scenes/transition_screen.tscn"
 GlobVar="*res://Scripts/autoloads/globVar.gd"
-ContentData="*res://Scripts/game_init.gd"
-GlobalUtil="*res://Scripts/global_util.gd"
 
 [dialogic]
 

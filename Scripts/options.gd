@@ -10,7 +10,7 @@ var user_prefs: UserPrefs
 func _ready() -> void:
 	user_prefs = UserPrefs.load_or_create()
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	pass
 
 

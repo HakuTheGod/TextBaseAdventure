@@ -1,8 +1,7 @@
-[gd_scene load_steps=22 format=3 uid="uid://cfdy2nhgcjsqc"]
+[gd_scene load_steps=21 format=3 uid="uid://cfdy2nhgcjsqc"]
 
 [ext_resource type="Script" uid="uid://436m11u7idds" path="res://Scripts/start_menu.gd" id="1_u7xsp"]
 [ext_resource type="Texture2D" uid="uid://cmua4d3ggcnn5" path="res://Assets/CGs/AI_vn_backgrounds/white.png" id="2_xu8vw"]
-[ext_resource type="Script" uid="uid://dkylvvfgwel5" path="res://Scripts/start_label.gd" id="3_iy5w0"]
 [ext_resource type="Texture2D" uid="uid://4r27iylo5178" path="res://Assets/CGs/45-454893_final-fantasy-x-logo-by-eldi13-on-deviantart-final-fantasy-x-background.png" id="4_gt3fj"]
 [ext_resource type="Script" uid="uid://bc7hux73lkt6n" path="res://Scripts/focus.gd" id="5_7tios"]
 [ext_resource type="Script" uid="uid://o2rwvbyvjwth" path="res://Scripts/startBtn.gd" id="6_dex5q"]
@@ -195,7 +194,6 @@ layout_mode = 2
 size_flags_vertical = 3
 texture = ExtResource("2_xu8vw")
 expand_mode = 2
-script = ExtResource("3_iy5w0")
 
 [node name="TextureRect" type="TextureRect" parent="MarginContainer2/VBoxContainer/TextureRect"]
 layout_mode = 0
@@ -219,7 +217,7 @@ grow_vertical = 2
 theme_override_constants/separation = 0
 script = ExtResource("5_7tios")
 
-[node name="quit2" type="Button" parent="MarginContainer2/VBoxContainer/TextureRect/menu"]
+[node name="start" type="Button" parent="MarginContainer2/VBoxContainer/TextureRect/menu"]
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_colors/font_disabled_color = Color(1, 1, 1, 1)
@@ -318,8 +316,11 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[connection signal="pressed" from="MarginContainer2/VBoxContainer/TextureRect/menu/quit2" to="MarginContainer2/VBoxContainer/TextureRect/menu/quit2" method="_on_pressed"]
+[connection signal="pressed" from="MarginContainer2/VBoxContainer/TextureRect/menu/start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="MarginContainer2/VBoxContainer/TextureRect/menu/start" to="MarginContainer2/VBoxContainer/TextureRect/menu/start" method="_on_pressed"]
 [connection signal="mouse_entered" from="MarginContainer2/VBoxContainer/TextureRect/menu/options" to="MarginContainer2/VBoxContainer/TextureRect/menu/options" method="_on_mouse_entered"]
+[connection signal="pressed" from="MarginContainer2/VBoxContainer/TextureRect/menu/options" to="." method="_on_options_pressed"]
 [connection signal="pressed" from="MarginContainer2/VBoxContainer/TextureRect/menu/options" to="MarginContainer2/VBoxContainer/TextureRect/menu/options" method="_on_pressed"]
+[connection signal="pressed" from="MarginContainer2/VBoxContainer/TextureRect/menu/quit" to="." method="_on_quit_pressed"]
 [connection signal="pressed" from="MarginContainer2/VBoxContainer/TextureRect/menu/quit" to="MarginContainer2/VBoxContainer/TextureRect/menu/quit" method="_on_pressed"]
-[connection signal="animation_finished" from="MarginContainer2/VBoxContainer/TextureRect/start_animation" to="MarginContainer2/VBoxContainer/TextureRect" method="_on_start_animation_animation_finished"]
+[connection signal="animation_finished" from="MarginContainer2/VBoxContainer/TextureRect/start_animation" to="." method="_on_start_animation_animation_finished"]
