@@ -18,18 +18,18 @@ var input_enabled := true
 var is_animating := false
 var full_text_shown := false
 
+var user_prefs: UserPrefs
 
 var index
 var current_page: int
-
-#option variables
-@onready var text_speed =  GeneralOptions.text_speed
 
 
 var content_dict: Dictionary
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	user_prefs = UserPrefs.load_or_create()
+	var text_speed =  user_prefs.text_speed
 	print("start")
 	actionArray = dialogue
 	actionArray.pi()
@@ -80,13 +80,13 @@ func display_dialogue_line(output_value) -> void:
 		return
 	var storyinstance = output_value.text_id
 	dialogue_line.text = storyinstance
-	if GeneralOptions.text_speed == 0.0:
+	if user_prefs.text_speed == 0.0:
 		text_animation.play("text_speed")
-	elif GeneralOptions.text_speed == 1.0:
+	elif user_prefs.text_speed == 1.0:
 		text_animation.play("text_speed_x2")
-	elif GeneralOptions.text_speed == 2.0:
+	elif user_prefs.text_speed == 2.0:
 		text_animation.play("text_speed_x3")
-	elif GeneralOptions.text_speed == 3.0:
+	elif user_prefs.text_speed == 3.0:
 		text_animation.play("text_speed_instant")
 		
 func change_text_animation(animation_name) -> void:

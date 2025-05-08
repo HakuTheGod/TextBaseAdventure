@@ -1,5 +1,4 @@
-extends Control
-class_name GameSettings
+extends Control 
 
 
 var user_prefs: UserPrefs 
@@ -48,7 +47,7 @@ func _on_text_speed_slider_value_changed(value: float) -> void:
 			text_player.play("Text_speed_instant")
 			user_prefs.text_animation = "Text_speed_instant"
 			#Dialogic.Settings.get_setting("text_speed", 0)
-		GeneralOptions.text_speed = value
+		user_prefs.text_speed = value
 	user_prefs.save()
 	pass # Replace with function body.
 

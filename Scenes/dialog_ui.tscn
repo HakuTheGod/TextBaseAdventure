@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://ucvqhehjbado"]
+[gd_scene load_steps=16 format=3 uid="uid://ucvqhehjbado"]
 
 [ext_resource type="Script" uid="uid://3r3486t7jea6" path="res://Scripts/Dialogue/dialogue.gd" id="1_u3hyn"]
 [ext_resource type="Texture2D" uid="uid://bhk2vq1q2gi02" path="res://Assets/CGs/AI_vn_backgrounds/vlack.jpg" id="2_la2cu"]
@@ -38,6 +38,8 @@ shadow_color = Color(0, 0, 0, 0.623529)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_s2ki8"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="Theme" id="Theme_kymi5"]
 
 [sub_resource type="Animation" id="Animation_jg3km"]
 length = 0.001
@@ -304,6 +306,7 @@ offset_right = -29.0
 offset_bottom = 82.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = SubResource("Theme_kymi5")
 theme_override_colors/default_color = Color(1, 1, 1, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 2

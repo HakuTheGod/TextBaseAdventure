@@ -1,6 +1,6 @@
 [gd_scene load_steps=22 format=3 uid="uid://cfdy2nhgcjsqc"]
 
-[ext_resource type="Script" uid="uid://bgf2mw75todvf" path="res://Scripts/globVar.gd" id="1_u7xsp"]
+[ext_resource type="Script" uid="uid://436m11u7idds" path="res://Scripts/start_menu.gd" id="1_u7xsp"]
 [ext_resource type="Texture2D" uid="uid://cmua4d3ggcnn5" path="res://Assets/CGs/AI_vn_backgrounds/white.png" id="2_xu8vw"]
 [ext_resource type="Script" uid="uid://dkylvvfgwel5" path="res://Scripts/start_label.gd" id="3_iy5w0"]
 [ext_resource type="Texture2D" uid="uid://4r27iylo5178" path="res://Assets/CGs/45-454893_final-fantasy-x-logo-by-eldi13-on-deviantart-final-fantasy-x-background.png" id="4_gt3fj"]
@@ -181,6 +181,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_u7xsp")
 
 [node name="MarginContainer2" type="MarginContainer" parent="."]
 layout_mode = 2
@@ -188,7 +189,6 @@ layout_mode = 2
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer2"]
 layout_mode = 2
 theme_override_constants/separation = 0
-script = ExtResource("1_u7xsp")
 
 [node name="TextureRect" type="TextureRect" parent="MarginContainer2/VBoxContainer"]
 layout_mode = 2
