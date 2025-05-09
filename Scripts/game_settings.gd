@@ -11,6 +11,26 @@ var user_prefs: UserPrefs
 @onready var audio: VBoxContainer = $"VBoxContainer3"
 @onready var controls: VBoxContainer = $"VBoxContainer4"
 
+@onready var resolutionButton = $"VBoxContainer2/Panel/HBoxContainer/Panel/OptionButton"
+
+const RESOLUTION_DICT: Array = [
+	Vector2i(1920, 1080), 
+	Vector2i(1680, 1050), 
+	Vector2i(1600, 900), 
+	Vector2i(1440, 900), 
+	Vector2i(1366, 768), 
+	Vector2i(1360, 768),
+	Vector2i(1280, 1024),
+	Vector2i(1280, 960),
+	Vector2i(1280, 800),
+	Vector2i(1280, 768),
+	Vector2i(1280, 720),
+	Vector2i(1280, 600),
+	Vector2i(1152, 864),
+	Vector2i(1024, 768),
+	Vector2i(800, 600)]
+
+
 
 
 func _ready() -> void:
@@ -85,4 +105,20 @@ func _on_audio_tab_pressed() -> void:
 func _on_controls_tab_pressed() -> void:
 	general.visible = false
 	controls.visible = true
+	pass # Replace with function body.
+
+
+func _on_option_button_item_selected(index: int) -> void:
+	DisplayServer.window_set_size(RESOLUTION_DICT[index])
+
+
+func _on_full_screen_button_toggled(_toggled_on: bool) -> void:
+	DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN)
+	resolutionButton.disabled = true
+	pass # Replace with function body.
+
+
+func _on_win_size_button_toggled(_toggled_on: bool) -> void:
+	DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED)
+	resolutionButton.disabled = false
 	pass # Replace with function body.

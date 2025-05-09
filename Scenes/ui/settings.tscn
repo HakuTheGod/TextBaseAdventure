@@ -1,14 +1,10 @@
-[gd_scene load_steps=56 format=3 uid="uid://t3t4d7xbgc2y"]
+[gd_scene load_steps=53 format=3 uid="uid://t3t4d7xbgc2y"]
 
 [ext_resource type="Script" uid="uid://bwrflrd0pkbwm" path="res://Scripts/game_settings.gd" id="1_xuapl"]
 [ext_resource type="Texture2D" uid="uid://22871mtkh2py" path="res://Assets/mftH3p2.jpg" id="2_xuapl"]
 [ext_resource type="Texture2D" uid="uid://cpsmrp55x6l6f" path="res://Assets/istockphoto-654922866-612x612.jpg" id="3_7lcou"]
 [ext_resource type="Script" uid="uid://cumavx6k25vnh" path="res://Scripts/backToGeneral.gd" id="11_lmb2i"]
-[ext_resource type="Script" uid="uid://ce4fghq380iqe" path="res://Scripts/setResolution.gd" id="12_62xb4"]
 [ext_resource type="ButtonGroup" uid="uid://by8dr7mgqoy2y" path="res://Util/Settings/Display/displayMode.tres" id="13_ofl4t"]
-[ext_resource type="Script" uid="uid://c6ylwuytv6q7b" path="res://Scripts/changeToFullScreen.gd" id="14_5wq4h"]
-[ext_resource type="Script" uid="uid://cksicn2y5w4ap" path="res://Scripts/changeToWindowMode.gd" id="15_w6ngk"]
-[ext_resource type="Script" uid="uid://bhlbnhfjhygc1" path="res://Scripts/toggle.gd" id="16_qsv4m"]
 [ext_resource type="Texture2D" uid="uid://b1rih8fnljyhp" path="res://Assets/keyboard.png" id="17_ee4wg"]
 [ext_resource type="Texture2D" uid="uid://bhepx7k1gsewc" path="res://Assets/gamepad.png" id="18_2cpva"]
 
@@ -331,7 +327,7 @@ func _ready() -> void:
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	pass
 
 
@@ -390,13 +386,30 @@ func _on_pressed() -> void:
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_h0p61"]
 
+[sub_resource type="GDScript" id="GDScript_45yaw"]
+script/source = "extends Button
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(_delta: float) -> void:
+	pass
+
+
+func _on_toggled(toggled_on: bool) -> void:
+	release_focus()
+"
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ugvmu"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6e1w0"]
 bg_color = Color(0.878431, 0.419608, 0.643137, 1)
 
 [node name="GameSettings" type="Control"]
-visible = false
 layout_mode = 3
 anchors_preset = 0
 offset_right = 1365.0
@@ -404,6 +417,7 @@ offset_bottom = 768.0
 script = ExtResource("1_xuapl")
 
 [node name="BgDim" type="ColorRect" parent="."]
+visible = false
 layout_mode = 0
 offset_left = -968.0
 offset_right = 1379.0
@@ -411,6 +425,7 @@ offset_bottom = 868.0
 color = Color(0, 0, 0, 0.333333)
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
+visible = false
 z_index = 1
 layout_mode = 1
 anchors_preset = 15
@@ -900,7 +915,6 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_84w6i")
 text = "Contols"
 
 [node name="VBoxContainer2" type="VBoxContainer" parent="."]
-visible = false
 z_index = 1
 layout_mode = 1
 anchors_preset = 15
@@ -1092,9 +1106,8 @@ popup/item_13/text = "1024x768"
 popup/item_13/id = 13
 popup/item_14/text = "800x600"
 popup/item_14/id = 14
-script = ExtResource("12_62xb4")
 
-[node name="Button" type="Button" parent="VBoxContainer2/Panel/HBoxContainer/Panel"]
+[node name="FullScreenButton" type="Button" parent="VBoxContainer2/Panel/HBoxContainer/Panel"]
 layout_mode = 0
 offset_left = 298.0
 offset_top = 220.0
@@ -1109,9 +1122,8 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_mxcm6")
 theme_override_styles/normal = SubResource("StyleBoxFlat_s2bx6")
 toggle_mode = true
 button_group = ExtResource("13_ofl4t")
-script = ExtResource("14_5wq4h")
 
-[node name="Button2" type="Button" parent="VBoxContainer2/Panel/HBoxContainer/Panel"]
+[node name="WinSizeButton" type="Button" parent="VBoxContainer2/Panel/HBoxContainer/Panel"]
 layout_mode = 0
 offset_left = 134.0
 offset_top = 220.0
@@ -1127,7 +1139,6 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_0pkto")
 toggle_mode = true
 button_pressed = true
 button_group = ExtResource("13_ofl4t")
-script = ExtResource("15_w6ngk")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="VBoxContainer2/Panel/HBoxContainer/Panel"]
 layout_mode = 0
@@ -1165,7 +1176,6 @@ theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_04hlq")
 theme_override_styles/hover = SubResource("StyleBoxFlat_lkicg")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_hs7w0")
 toggle_mode = true
-script = ExtResource("16_qsv4m")
 
 [node name="TextureRect2" type="TextureRect" parent="VBoxContainer2/Panel/HBoxContainer"]
 custom_minimum_size = Vector2(150, 0)
@@ -1543,7 +1553,7 @@ theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_4g4ns")
 theme_override_styles/hover = SubResource("StyleBoxFlat_ugf30")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_h0p61")
 toggle_mode = true
-script = ExtResource("16_qsv4m")
+script = SubResource("GDScript_45yaw")
 
 [node name="Button3" type="Button" parent="VBoxContainer3/Panel/HBoxContainer/Panel"]
 layout_mode = 1
@@ -1563,7 +1573,7 @@ theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_4g4ns")
 theme_override_styles/hover = SubResource("StyleBoxFlat_ugf30")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_h0p61")
 toggle_mode = true
-script = ExtResource("16_qsv4m")
+script = SubResource("GDScript_45yaw")
 
 [node name="Button2" type="Button" parent="VBoxContainer3/Panel/HBoxContainer/Panel"]
 layout_mode = 1
@@ -1583,7 +1593,7 @@ theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_dnlux")
 theme_override_styles/hover = SubResource("StyleBoxFlat_kwekr")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_u5315")
 toggle_mode = true
-script = ExtResource("16_qsv4m")
+script = SubResource("GDScript_45yaw")
 
 [node name="Button4" type="Button" parent="VBoxContainer3/Panel/HBoxContainer/Panel"]
 layout_mode = 1
@@ -1603,7 +1613,7 @@ theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_dnlux")
 theme_override_styles/hover = SubResource("StyleBoxFlat_kwekr")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_u5315")
 toggle_mode = true
-script = ExtResource("16_qsv4m")
+script = SubResource("GDScript_45yaw")
 
 [node name="OptionButton" type="OptionButton" parent="VBoxContainer3/Panel/HBoxContainer/Panel"]
 layout_mode = 1
@@ -1854,9 +1864,9 @@ text = "Contols"
 [connection signal="pressed" from="VBoxContainer/Panel/HBoxContainer/TextureRect2/ControlsTab" to="." method="_on_controls_tab_pressed"]
 [connection signal="pressed" from="VBoxContainer2/Panel/HBoxContainer/Panel2/Button" to="VBoxContainer2/Panel/HBoxContainer/Panel2/Button" method="_on_pressed"]
 [connection signal="pressed" from="VBoxContainer2/Panel/HBoxContainer/Panel2/Button2" to="VBoxContainer2/Panel/HBoxContainer/Panel2/Button2" method="_on_pressed"]
-[connection signal="item_selected" from="VBoxContainer2/Panel/HBoxContainer/Panel/OptionButton" to="VBoxContainer2/Panel/HBoxContainer/Panel/OptionButton" method="_on_item_selected"]
-[connection signal="toggled" from="VBoxContainer2/Panel/HBoxContainer/Panel/Button" to="VBoxContainer2/Panel/HBoxContainer/Panel/Button" method="_on_toggled"]
-[connection signal="toggled" from="VBoxContainer2/Panel/HBoxContainer/Panel/Button2" to="VBoxContainer2/Panel/HBoxContainer/Panel/Button2" method="_on_toggled"]
+[connection signal="item_selected" from="VBoxContainer2/Panel/HBoxContainer/Panel/OptionButton" to="." method="_on_option_button_item_selected"]
+[connection signal="toggled" from="VBoxContainer2/Panel/HBoxContainer/Panel/FullScreenButton" to="." method="_on_full_screen_button_toggled"]
+[connection signal="toggled" from="VBoxContainer2/Panel/HBoxContainer/Panel/WinSizeButton" to="." method="_on_win_size_button_toggled"]
 [connection signal="toggled" from="VBoxContainer2/Panel/HBoxContainer/Panel/Button3" to="VBoxContainer2/Panel/HBoxContainer/Panel/Button3" method="_on_toggled"]
 [connection signal="pressed" from="VBoxContainer2/Panel/HBoxContainer/TextureRect2/Button3" to="VBoxContainer2/Panel/HBoxContainer/TextureRect2/Button3" method="_on_pressed"]
 [connection signal="pressed" from="VBoxContainer2/Panel/HBoxContainer/TextureRect2/Button4" to="VBoxContainer2/Panel/HBoxContainer/TextureRect2/Button4" method="_on_pressed"]
