@@ -1,12 +1,8 @@
-[gd_scene load_steps=21 format=3 uid="uid://cfdy2nhgcjsqc"]
+[gd_scene load_steps=17 format=3 uid="uid://cfdy2nhgcjsqc"]
 
 [ext_resource type="Script" uid="uid://436m11u7idds" path="res://Scripts/start_menu.gd" id="1_u7xsp"]
 [ext_resource type="Texture2D" uid="uid://cmua4d3ggcnn5" path="res://Assets/CGs/AI_vn_backgrounds/white.png" id="2_xu8vw"]
 [ext_resource type="Texture2D" uid="uid://4r27iylo5178" path="res://Assets/CGs/45-454893_final-fantasy-x-logo-by-eldi13-on-deviantart-final-fantasy-x-background.png" id="4_gt3fj"]
-[ext_resource type="Script" uid="uid://bc7hux73lkt6n" path="res://Scripts/focus.gd" id="5_7tios"]
-[ext_resource type="Script" uid="uid://o2rwvbyvjwth" path="res://Scripts/startBtn.gd" id="6_dex5q"]
-[ext_resource type="Script" uid="uid://dcod4aq5lggd7" path="res://Scripts/options.gd" id="7_dc6u1"]
-[ext_resource type="Script" uid="uid://d37yaxv4djy25" path="res://Scripts/quit.gd" id="8_d6ngd"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_a47tf"]
 bg_color = Color(0, 0, 0, 0)
@@ -215,7 +211,6 @@ offset_bottom = 718.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 0
-script = ExtResource("5_7tios")
 
 [node name="start" type="Button" parent="MarginContainer2/VBoxContainer/TextureRect/menu"]
 layout_mode = 2
@@ -228,7 +223,6 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_1y3lw")
 theme_override_styles/normal = SubResource("StyleBoxFlat_s0f5h")
 disabled = true
 text = "START"
-script = ExtResource("6_dex5q")
 
 [node name="continue" type="Button" parent="MarginContainer2/VBoxContainer/TextureRect/menu"]
 layout_mode = 2
@@ -255,7 +249,6 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_s0f5h")
 disabled = true
 action_mode = 0
 text = "OPTIONS"
-script = ExtResource("7_dc6u1")
 
 [node name="extras" type="Button" parent="MarginContainer2/VBoxContainer/TextureRect/menu"]
 layout_mode = 2
@@ -280,7 +273,6 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_1y3lw")
 theme_override_styles/normal = SubResource("StyleBoxFlat_s0f5h")
 disabled = true
 text = "QUIT"
-script = ExtResource("8_d6ngd")
 
 [node name="start_label" type="RichTextLabel" parent="MarginContainer2/VBoxContainer/TextureRect"]
 layout_mode = 1
