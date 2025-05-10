@@ -1,42 +1,146 @@
 {
 	"Scene1_0": {
-		"title": "Prologue",
 		"speaker": "You",
-		"sprite": "tia_angry",
+		"sprite_animation_type": "individual",
+		"mass_sprite_animation": "none",
+		"background": {
+			"file": "white",
+			"animation": "no_animation"	
+		},
+		"sprite_1": {
+			"file": "tia",
+			"position": "3",
+			"animation": "fade_in"	
+		},
+		"sprite_2": {
+			"file": "none",
+			"position": "3",
+			"animation": "none"	
+		},
+		"sprite_3": {
+			"file": "none",
+			"position": "3",
+			"animation": "none"	
+		},
+		"sprite_4": {
+			"file": "none",
+			"position": "3",
+			"animation": "none"	
+		},
+		"sprite_5": {
+			"file": "none",
+			"position": "3",
+			"animation": "none"	
+		},
 		"dialogue_line": "This is where the story starts.",
-		"next": "001_intro",
+		"animation": "no_animation",
 	},
 	"Scene1_1": {
-		"title": "Prologue",
 		"speaker": "You",
-		"sprite": "tia_happy",
+		"sprite_animation_type": "individual",
+		"mass_sprite_animation": "none",
+		"background": {
+			"file": "white",
+			"animation": "no_animation"	
+		},
+		"sprite_1": {
+			"file": "tia_blush",
+			"position": "3",
+			"animation": "none"	
+		},
+		"sprite_2": {
+			"file": "none",
+			"position": "3",
+			"animation": "none"	
+		},
+		"sprite_3": {
+			"file": "none",
+			"position": "3",
+			"animation": "none"	
+		},
+		"sprite_4": {
+			"file": "none",
+			"position": "3",
+			"animation": "none"	
+		},
+		"sprite_5": {
+			"file": "none",
+			"position": "3",
+			"animation": "none"	
+		},
 		"dialogue_line": "I wonder what would have happened if i did not decide to do this. If i just had stayed home.",
-		"next": "002_intro",
+		"animation": "no_animation",
 	},
 	"Scene1_2": {
-		"title": "Prologue",
 		"speaker": "You",
-		"dialogue_line": "But I guess... i'm not in a position to wonder anymore.",
-		"next": "002_outro",
+		"sprite_animation_type": "individual",
+		"mass_sprite_animation": "none",
+		"background": {
+			"file": "white",
+			"animation": "no_animation"	
+		},
+		"sprite_1": {
+			"file": "none",
+			"position": "3",
+			"animation": "fade_out"	
+		},
+		"sprite_2": {
+			"file": "none",
+			"position": "3",
+			"animation": "none"	
+		},
+		"sprite_3": {
+			"file": "none",
+			"position": "3",
+			"animation": "none"	
+		},
+		"sprite_4": {
+			"file": "none",
+			"position": "3",
+			"animation": "none"	
+		},
+		"sprite_5": {
+			"file": "none",
+			"position": "3",
+			"animation": "none"	
+		},
+		"dialogue_line": "But I guess... i'm not in a position to wonder anymore.But I guess... i'm not in a position to wonder anymore.",
+		"animation": "no_animation",
 	},
 	"Scene1_3": {
-		"title": "Prologue",
 		"speaker": "You",
-		"dialogue_line": "The end",
-		"choices": {
-			"1": {
-				"text": "Quit",
-				"output": "00F_outro_quit"
-			},
+		"sprite_animation_type": "mass",
+		"mass_sprite_animation": "fade_in_M_R",
+		"background": {
+			"file": "white",
+			"animation": "no_animation"	
 		},
-		"items_used": {
-			"1": {
-				"text": "Castle Key"
-			}
-		}
-	},
-	"00F_outro_quit": {
-		"title": "Quitting Game...",
-		"narr-text": "pipi",
+		"sprite_1": {
+			"file": "tia",
+			"position": "2",
+			"animation": "fade_in"	
+		},
+		"sprite_2": {
+			"file": "tia_blush",
+			"position": "4",
+			"animation": "fade_in"	
+		},
+		"sprite_3": {
+			"file": "none",
+			"position": "3",
+			"animation": "none"	
+		},
+		"sprite_4": {
+			"file": "none",
+			"position": "3",
+			"animation": "none"	
+		},
+		"sprite_5": {
+			"file": "none",
+			"position": "3",
+			"animation": "none"	
+		},
+		"dialogue_line": "The end",
+		"animation": "no_animation",
 	},
 }

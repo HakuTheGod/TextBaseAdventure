@@ -1,0 +1,6 @@
+_character_name,_expression,_animation,_position
+Tia,normal,fade_in,1
+Tia,blush,,3
+Tia,normal,,5
+Tia,blush,,2
+Tia,normal,fade_out,4

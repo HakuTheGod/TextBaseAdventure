@@ -12,19 +12,19 @@ config_version=5
 
 config/name="TextBaseAdventure"
 run/main_scene="res://Scenes/game.tscn"
-config/features=PackedStringArray("4.3", "Forward Plus")
+config/features=PackedStringArray("4.5", "Forward Plus")
 config/icon="res://icon.svg"
 
 [autoload]
 
 InventoryInside="*res://Scripts/inventory/inventory_inside.gd"
 PC="*res://Scripts/player.gd"
-Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
 TransitionScreen="*res://Scenes/transition_screen.tscn"
 GlobVar="*res://Scripts/globVar.gd"
 ContentData="*res://Scripts/game_init.gd"
 GeneralOptions="*res://Scripts/general_options.gd"
 GlobalUtil="*res://Scripts/global_util.gd"
+Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
 
 [dialogic]
 
@@ -70,7 +70,7 @@ window/stretch/mode="canvas_items"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/dialogic/plugin.cfg")
+enabled=PackedStringArray("res://addons/csv-data-importer/plugin.cfg", "res://addons/dialogic/plugin.cfg")
 
 [input]
 
@@ -90,6 +90,10 @@ next_line={
 , Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"button_mask":1,"position":Vector2(164, 27),"global_position":Vector2(173, 73),"factor":1.0,"button_index":1,"canceled":false,"pressed":true,"double_click":false,"script":null)
 ]
 }
+
+[internationalization]
+
+locale/translations=PackedStringArray("res://Story/Dialogue_test/Scenes/sss0.el.translation", "res://Story/Dialogue_test/Scenes/sss0.en.translation")
 
 [rendering]
 
