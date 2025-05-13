@@ -8,3 +8,4 @@
 [node name="StartMenu" parent="." instance=ExtResource("1_7nbq1")]
 
 [node name="Settings" parent="." instance=ExtResource("3_wrm1d")]
+visible = false

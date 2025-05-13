@@ -29,6 +29,7 @@ var user_prefs: UserPrefs
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	print("ON MAIN MENU")
 	current_page = "null"
 	user_prefs = UserPrefs.load_or_create()
 	start_label.visible = true
@@ -113,6 +114,11 @@ func _input(event: InputEvent) -> void:
 				child.disabled = true
 		elif event.pressed and event.keycode == KEY_ESCAPE and GlobVar.on_start_screen == 2:
 			GlobVar.on_start_screen = 1
+			settings.visible = false
+			menu.visible = true
+			start_animation.play("show_start")
+			
+			#if we have any more menus at a later date need to change this in if/else format
 
 
 
@@ -126,6 +132,7 @@ func _on_start_pressed() -> void:
 	TransitionScreen.transition()
 	await TransitionScreen.on_transition_finished
 	v_box_container.visible = false
+	GlobVar.on_start_screen = 0
 	get_tree().change_scene_to_file("res://Scenes/dialog_ui.tscn")
 	pass # Replace with function body.
 

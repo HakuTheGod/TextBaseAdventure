@@ -8,6 +8,8 @@ class_name UserPrefs extends Resource
 const USER_PREFS_PATH: String = "user://user_prefs.tres"
 
 func save() -> void:
+	print(self)
+	
 	ResourceSaver.save(self, USER_PREFS_PATH)
 
 static func load_or_create() -> UserPrefs:

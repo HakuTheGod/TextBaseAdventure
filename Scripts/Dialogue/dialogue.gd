@@ -13,6 +13,10 @@ extends PanelContainer
 
 @onready var characters: Node2D = $MarginContainer2/VBoxContainer/TextureRect/characters
 
+@onready var pause_menu: Control = $Panel2
+
+
+
 # === CONSTANTS ===
 const CHARACTER = preload("res://Scenes/vn/character.tscn")
 const DIALOGUE = preload("res://Story/Dialogue_test/Scenes/sss0.tres")
@@ -35,6 +39,8 @@ var index
 
 func _ready() -> void:
 	user_prefs = UserPrefs.load_or_create()
+	self.process_mode = Node.PROCESS_MODE_ALWAYS
+	text_animation.process_mode = Node.PROCESS_MODE_PAUSABLE
 	var text_speed =  user_prefs.text_speed
 	print("start")
 	#actionArray = dialogue
@@ -46,10 +52,17 @@ func _ready() -> void:
 
 
 func _input(event: InputEvent) -> void:
+	if event.is_action_pressed("ui_cancel"):
+		if get_tree().paused:
+			_resume_game()
+		else:
+			_pause_game()
+		return
+
 	if !input_enabled or is_animating:
 		return
 
-	if event.is_action_pressed("next_line"):
+	if event.is_action_pressed("next_line") and get_tree().paused == false:
 		if dialogue_line.visible_ratio < 1:
 			change_text_animation("text_speed_instant")
 			full_text_shown = true
@@ -58,6 +71,17 @@ func _input(event: InputEvent) -> void:
 			set_line_content(actionArray.actions[current_page])
 		else:
 			get_tree().quit()
+			
+			
+func _pause_game() -> void:
+	get_tree().paused = true
+	pause_menu.visible = true
+	pause_menu.process_mode = Node.PROCESS_MODE_ALWAYS
+
+func _resume_game() -> void:
+	get_tree().paused = false
+	pause_menu.visible = false
+
 
 
 func set_line_content(output_value) -> void:
